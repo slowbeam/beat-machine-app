@@ -16,3 +16,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 })
+
+let steps = []
+
+function instantiateSteps() {
+  let count = 1
+  while (count <= 16) {
+    steps.push(new Step(count))
+    count++
+  }
+}
+
+instantiateSteps()
