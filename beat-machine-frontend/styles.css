@@ -71,3 +71,10 @@ h3 {
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
 }
+
+.button-wrapper {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr)
+}
