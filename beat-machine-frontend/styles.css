@@ -1,0 +1,73 @@
+body {
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  display: inline;
+}
+
+.inst-button {
+    background-color: #4CAF50;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px;
+}
+
+.button-row {
+  min-width: 940px;
+}
+
+.kick {
+  background-color: #9c83e8;
+}
+
+.snare {
+  background-color: #ff6666;
+}
+
+.openhat {
+  background-color:  #00e6ac;
+}
+
+.closedhat {
+  background-color:  #4db8ff;
+}
+
+.led-red {
+  margin: 0 auto;
+  width: 12px;
+  height: 12px;
+  vertical-align: top;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+}
+
+.led-yellow {
+  margin: 0 auto;
+  width: 12px;
+  height: 12px;
+  vertical-align: top;
+  background-color: #ffff99;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+}
+
+.led-magenta {
+  margin: 0 auto;
+  width: 12px;
+  height: 12px;
+  vertical-align: top;
+  background-color: #ccccff;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+}
