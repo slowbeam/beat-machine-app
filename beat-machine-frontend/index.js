@@ -33,11 +33,24 @@ function instantiateSteps() {
 
 instantiateSteps()
 
+// let drumKit = {
+//   kick: 'audio/LF_kick_08.wav',
+//   snare: 'audio/LF_snare_01.wav',
+//   hiHatClosed: 'audio/LF_hihat_closed_05.wav',
+//   hiHatOpen: 'audio/LF_hihat_open_03.wav'
+// }
+
 let drumKit = {
-  kick: 'audio/LF_kick_08.wav',
-  snare: 'audio/LF_snare_01.wav',
-  hiHatClosed: 'audio/LF_hihat_closed_05.wav',
-  hiHatOpen: 'audio/LF_hihat_open_03.wav'
+  kick:'audio/Roland TR-808/Bassdrum-05.wav',
+  snare:'audio/Roland TR-808/Snaredrum.wav',
+  hiHatOpen:'audio/Roland TR-808/Hat Open.wav',
+  hiHatClosed:'audio/Roland TR-808/Hat Closed.wav',
+  rimshot:'audio/Roland TR-808/Rimshot.wav',
+  tomH:'audio/Roland TR-808/Tom H.wav',
+  tomM:'audio/Roland TR-808/Tom M.wav',
+  tomL:'audio/Roland TR-808/Tom L.wav',
+  cowBell: 'audio/Roland TR-808/Cowbell.wav',
+  clap: 'audio/Roland TR-808/Clap.wav'
 }
 
 function instantiateDrumKit(drumKit){
@@ -79,6 +92,20 @@ addNoteToSequence('hiHatClosed', 12)
 addNoteToSequence('hiHatClosed', 13)
 addNoteToSequence('hiHatClosed', 14)
 addNoteToSequence('hiHatClosed', 15)
+addNoteToSequence('rimshot', 3)
+addNoteToSequence('rimshot', 6)
+addNoteToSequence('rimshot', 8)
+addNoteToSequence('rimshot', 11)
+addNoteToSequence('rimshot', 12)
+addNoteToSequence('tomH', 5)
+addNoteToSequence('tomH', 8)
+addNoteToSequence('tomM', 13)
+addNoteToSequence('tomM', 14)
+addNoteToSequence('tomL', 15)
+addNoteToSequence('cowBell', 9)
+addNoteToSequence('cowBell', 12)
+addNoteToSequence('clap', 3)
+addNoteToSequence('clap', 6)
 
 function removeNoteFromSequence(instrument, stepNum) {
   let targetIndex;
