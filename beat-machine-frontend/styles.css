@@ -1,5 +1,5 @@
 body {
-  background-color: #696969
+
 }
 
 #main-container {
@@ -12,6 +12,14 @@ h1 {
 
 h3 {
   display: inline;
+}
+
+#playback-controls {
+  text-align: center;
+}
+
+#playback-controls button {
+  padding: 10px;
 }
 
 .inst-button {
