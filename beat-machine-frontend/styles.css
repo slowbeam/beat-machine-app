@@ -1,11 +1,12 @@
 body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 h1 {
   text-align: center;
 }
 
-h3 {
+h4 {
   display: inline;
 }
 
@@ -20,6 +21,11 @@ h3 {
     display: inline-block;
     font-size: 16px;
     margin: 2px;
+}
+
+.inst-title {
+  align-self: center;
+  justify-self: left;
 }
 
 .button-row {
@@ -62,7 +68,7 @@ h3 {
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
 }
 
-.led-magenta {
+.led-purple {
   margin: 0 auto;
   width: 12px;
   height: 12px;
@@ -76,5 +82,5 @@ h3 {
   padding-left: 10%;
   padding-right: 10%;
   display: grid;
-  grid-template-columns: repeat(16, 1fr)
+  grid-template-columns: 60px repeat(16, 1fr)
 }
