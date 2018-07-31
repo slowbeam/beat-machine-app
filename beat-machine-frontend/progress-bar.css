@@ -1,0 +1,14 @@
+#container {
+  width: 80%;
+  background: #ddd;
+  margin: calc(50vh - 30px) auto;
+  text-align: center;
+  padding-bottom: 1px;
+}
+
+.progress {
+  width: 1px;
+  height: 5px;
+  background: #006B5A;
+  transition: width .1s linear;
+}
