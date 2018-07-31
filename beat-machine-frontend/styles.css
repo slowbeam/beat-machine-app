@@ -1,16 +1,12 @@
 body {
-
-}
-
-#main-container {
-
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 h1 {
   text-align: center;
 }
 
-h3 {
+h4 {
   display: inline;
 }
 
@@ -35,6 +31,11 @@ h3 {
     margin: 2px;
 }
 
+.inst-title {
+  align-self: center;
+  justify-self: left;
+}
+
 .button-row {
   min-width: 940px;
 }
@@ -55,39 +56,33 @@ h3 {
   background-color:  #4db8ff;
 }
 
-.led-red {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #F00;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
-}
-
-.led-yellow {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #ffff99;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
-}
-
-.led-magenta {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #ccccff;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
-}
-
 .button-wrapper {
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 5px;
   display: grid;
-  grid-template-columns: repeat(16, 1fr)
+  grid-template-columns: 60px repeat(16, 1fr)
+}
+
+.wrapper {
+  margin: 0px auto;
+  height: 768px;
+  width: 1366px;
+  background: url('svg/buttons/beat-machine-bkg-3.svg');
+  background-size: 1366px 768px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.buttons {
+  float: right;
+  padding-right: 6%;
+  margin 0px auto;
+  width: 1100px;
+  padding-top: 5%;
+}
+
+#app-title {
+  padding-top: 40px;
+  padding-bottom: 0px;
 }
