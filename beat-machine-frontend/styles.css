@@ -1,9 +1,12 @@
 body {
+  background-color: lightGrey;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 h1 {
-  text-align: center;
+  text-align: right;
+  color:  white;
+  font-size: 50px;
 }
 
 h4 {
@@ -57,6 +60,7 @@ h4 {
 }
 
 .button-wrapper {
+  min-height: 75px
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5px;
@@ -66,23 +70,92 @@ h4 {
 
 .wrapper {
   margin: 0px auto;
-  height: 768px;
-  width: 1366px;
-  background: url('svg/buttons/beat-machine-bkg-3.svg');
-  background-size: 1366px 768px;
+  height: 900px;
+  width: 1600px;
+  background: url('svg/buttons/beat-machine-bkg-7.svg');
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .buttons {
   float: right;
-  padding-right: 6%;
+  padding-right: 10%;
   margin 0px auto;
   width: 1100px;
-  padding-top: 5%;
+  padding-top: 3%;
 }
 
 #app-title {
-  padding-top: 40px;
+  padding-top: 85px;
+  padding-right: 258px;
   padding-bottom: 0px;
+}
+
+.svg-button {
+  box-sizing: border-box;
+}
+
+.magenta-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-magenta-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.magenta-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-magenta-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.purple-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-purple-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.purple-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-purple-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.green-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-green-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.green-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-green-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.blue-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-blue-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.blue-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-blue-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
 }
