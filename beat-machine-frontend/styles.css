@@ -1,12 +1,24 @@
 body {
+  background-color: lightGrey;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 h1 {
+  text-align: right;
+  color:  white;
+  font-size: 50px;
+}
+
+h4 {
+  display: inline;
+}
+
+#playback-controls {
   text-align: center;
 }
 
-h3 {
-  display: inline;
+#playback-controls button {
+  padding: 10px;
 }
 
 .inst-button {
@@ -20,6 +32,11 @@ h3 {
     display: inline-block;
     font-size: 16px;
     margin: 2px;
+}
+
+.inst-title {
+  align-self: center;
+  justify-self: left;
 }
 
 .button-row {
@@ -42,32 +59,103 @@ h3 {
   background-color:  #4db8ff;
 }
 
-.led-red {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #F00;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+.button-wrapper {
+  min-height: 75px
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: 60px repeat(16, 1fr)
 }
 
-.led-yellow {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #ffff99;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+.wrapper {
+  margin: 0px auto;
+  height: 900px;
+  width: 1600px;
+  background: url('svg/buttons/beat-machine-bkg-7.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.led-magenta {
-  margin: 0 auto;
-  width: 12px;
-  height: 12px;
-  vertical-align: top;
-  background-color: #ccccff;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px
+.buttons {
+  float: right;
+  padding-right: 10%;
+  margin 0px auto;
+  width: 1100px;
+  padding-top: 3%;
+}
+
+#app-title {
+  padding-top: 85px;
+  padding-right: 258px;
+  padding-bottom: 0px;
+}
+
+.svg-button {
+  box-sizing: border-box;
+}
+
+.magenta-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-magenta-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.magenta-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-magenta-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.purple-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-purple-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.purple-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-purple-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.green-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-green-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.green-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-green-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.blue-button {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-blue-dark.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
+}
+
+.blue-button-lit {
+  min-height: 75px;
+  min-width: 42px;
+  background: url('svg/buttons/button-blue-lit.svg');
+  background-size: 42px 75px;
+  background-repeat: no-repeat;
 }
