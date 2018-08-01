@@ -487,7 +487,7 @@ function instantiateDrumKit(drumKit){
 const loadedDrumKit = instantiateDrumKit(drumKit)
 
 function addNoteToSequence(instrument, stepNum) {
-  new Note(loadedDrumKit[instrument][stepNum - 1], instrument, steps[stepNum - 1])
+  new Note(instrument, steps[stepNum - 1])
 }
 
 function removeNoteFromSequence(instrument, stepNum) {
@@ -499,9 +499,9 @@ function removeNoteFromSequence(instrument, stepNum) {
   notes.splice(targetIndex, 1)
 }
 
-function changeVolumeOfInstrument(instrument, level) {
-  loadedDrumKit[instrument].forEach(audioEl=>audioEl.volume = level)
-}
+// function changeVolumeOfInstrument(instrument, level) {
+//   loadedDrumKit[instrument].forEach(audioEl=>audioEl.volume = level)
+// }
 
 let playback;
 let tempo = 120
@@ -534,7 +534,7 @@ function startPlay() {
     console.log(stepCount);
 
     steps[stepCount - 1].notes.forEach(function(note) {
-      note.audio.play()
+      loadedDrumKit[note.instrument][stepCount - 1].play()
     })
     if (stepCount === 16){
       stepCount = 1

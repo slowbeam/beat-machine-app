@@ -6,8 +6,7 @@ class Step {
 }
 
 class Note {
-  constructor(audio, instrument, step) {
-    this.audio = audio
+  constructor(instrument, step) {
     this.instrument = instrument
     // this.step = step
     step.notes.push(this)
