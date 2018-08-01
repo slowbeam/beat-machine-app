@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
+
+
+  $("#tempo-screen").sevenSeg({ digits: 3, value: 125, decimalPoint: false, allowInput: false});
+
   const rootDiv = document.getElementById('main-container')
 
   const snareOne = document.getElementById('snare-one')
@@ -69,6 +73,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const cHatFourteen = document.getElementById('c-hat-fourteen')
   const cHatFifteen = document.getElementById('c-hat-fifteen')
   const cHatSixteen = document.getElementById('c-hat-sixteen')
+
+  const playButton = document.getElementById('play-button')
+  const stopButton = document.getElementById('stop-button')
+
+  const tempoUpButton = document.getElementById('tempo-up-button')
+  const tempoDownButton = document.getElementById('tempo-down-button')
+
 
 
 
@@ -425,6 +436,37 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   })
 
+  // case "play":
+  // if (playButton.className === "play-button"){playButton.className = "play-button-lit"; stopButton.className = "stop-button"}
+  // else {playButton.className = "play-button"; stopButton.className = "stop-button-lit"}
+  // break;
+  //
+  // case "stop":
+  // if (stopButton.className === "stop-button"){stopButton.className = "stop-button-lit"; playButton.className = "play-button"}
+  // break;
+  //
+  // case "tempo-up":
+  // tempoUpButton.className = "tempo-up-button-lit"
+  // setTimeout(()=>{tempoUpButton.className = "tempo-up-button"}, 300)
+  // incrementTempo()
+  // break;
+  //
+  // case "tempo-down":
+  // tempoDownButton.className = "tempo-down-button-lit"
+  // setTimeout(()=>{tempoDownButton.className = "tempo-down-button"}, 300)
+  // decrementTempo()
+  // break;
+
+let currentTempo = 125;
+  function incrementTempo(){
+    currentTempo += 1
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
+
+  function  decrementTempo(){
+    currentTempo -= 1
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
 
 })
 

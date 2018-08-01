@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="models.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="sevenSeg.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
   </head>
   <body>
     <div id="main-container">
@@ -18,6 +23,7 @@
         <div id="app-title">
           <h1>Beat-Machine</h1>
         </div>
+
         <div class="buttons">
           <div class="button-row" id="kick">
 
@@ -249,14 +255,28 @@
 
               <div data-action="chat-16" id="chat-16" class="sequencer-button blue-button">
               </div>
+
             </div>
           </div>
+        </div>
+        <div data-action="play" id="play-button" class="play-button">
+        <div data-action="stop" id="stop-button" class="stop-button">
+        </div>
+        <div data-action="tempo-up" id="tempo-up-button" class="tempo-up-button"></div>
+        <div data-action="tempo-down" id="tempo-down-button" class="tempo-down-button"></div>
+        <div id="tempo-container">
+          <div class="digital-screen" id="tempo-screen"></div>
+        </div>
 
-        </div>
-        </div>
+      </div>
+
+
 
 
 
     </div>
+
+
+
   </body>
 </html>
