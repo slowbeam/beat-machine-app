@@ -62,25 +62,25 @@ h4 {
 
 .wrapper {
   margin: 0px auto;
-  height: 768px;
-  width: 1366px;
-  background: url('svg/buttons/beat-machine-bkg-3.svg');
-  background-size: 1366px 768px;
+  height: 900px;
+  width: 1600px;
+  background: url('svg/buttons/beat-machine-bkg-7.svg');
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .buttons {
   float: right;
-  padding-right: 6%;
+  padding-right: 10%;
   margin 0px auto;
   width: 1100px;
   padding-top: 3%;
 }
 
 #app-title {
-  padding-top: 26px;
-  padding-right: 160px;
+  padding-top: 85px;
+  padding-right: 258px;
   padding-bottom: 0px;
 }
 
