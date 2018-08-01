@@ -346,14 +346,23 @@ h4 {
 #play-label {
   margin-top: -219px;
   margin-left: 575px;
-  margin-bottom: 200px;
 }
 
 #stop-label {
-  margin-top: -215px;
+  margin-top: -28px;
   margin-left: 642px;
-  margin-bottom: 200px;
 }
+
+#tempo-label {
+  margin-top: -29px;
+  margin-left: 788px;
+}
+
+#shuffle-label {
+  margin-top: -29px;
+  margin-left: 970px;
+}
+
 
 .digital-screen {
        display: inline-block;
