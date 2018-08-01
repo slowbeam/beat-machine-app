@@ -70,6 +70,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const cHatFifteen = document.getElementById('c-hat-fifteen')
   const cHatSixteen = document.getElementById('c-hat-sixteen')
 
+  const playButton = document.getElementById('play-button')
+
 
 
   rootDiv.addEventListener("click", function(event){
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
       case "kick-eleven":
       if (kickEleven.className === "purple-button"){kickEleven.className = "purple-button-lit"}
-      else {kickNine.className = "purple-button"}
+      else {kickEleven.className = "purple-button"}
       break;
 
       case "kick-twelve":
@@ -394,6 +396,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
       if (cHatSixteen.className === "blue-button"){cHatSixteen.className = "blue-button-lit"}
       else {cHatSixteen.className = "blue-button"}
       break;
+
+      case "play":
+      if (playButton.className === "play-button"){playButton.className = "play-button-lit"}
+      else {playButton.className = "play-button"}
+      
 
     }
   })
