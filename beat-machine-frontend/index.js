@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
+  
+
   const rootDiv = document.getElementById('main-container')
 
   const snareOne = document.getElementById('snare-one')

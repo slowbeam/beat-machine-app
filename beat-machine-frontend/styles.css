@@ -154,7 +154,7 @@ h4 {
 
 .play-button {
   margin-top: 500px;
-  margin-left: 690px;
+  margin-left: 640px;
   margin-right: 200px;
   margin-bottom: 200px;
 
@@ -211,3 +211,25 @@ h4 {
   background-position: center;
 
 }
+
+#tempo-container {
+  margin-top: -273px;
+  margin-left: 190px;
+  margin-bottom: 1000px
+
+}
+
+#tempo-screen{
+  padding: 0.5em;
+  height: 30px;
+  width: 75px;
+
+
+}
+
+.digital-screen {
+       display: inline-block;
+       background-color: Black;
+       border-radius: 5px;
+       margin-left: 12px;
+   }

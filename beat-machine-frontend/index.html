@@ -5,6 +5,11 @@
     <title></title>
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="sevenSeg.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
   </head>
   <body>
     <div id="main-container">
@@ -256,6 +261,10 @@
         <div data-action="play" id="play-button" class="play-button">
         <div data-action="stop" id="stop-button" class="stop-button">
         </div>
+        <div id="tempo-container">
+          <div class="digital-screen" id="tempo-screen"></div>
+        </div>
+
       </div>
 
 
@@ -263,5 +272,8 @@
 
 
     </div>
+
+
+
   </body>
 </html>
