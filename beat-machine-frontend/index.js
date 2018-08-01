@@ -431,8 +431,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     }
   })
-  var kick = new Audio('audio/LF_kick_08.wav')
-
 
 let currentTempo = 125;
   function incrementTempo(){
