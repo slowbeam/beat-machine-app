@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: 125, decimalPoint: false, allowInput: false});
 
+  $("#shuffle-screen").sevenSeg({ digits: 2, value: 0, decimalPoint: false, allowInput: false});
+
   const rootDiv = document.getElementById('main-container')
 
   const snareOne = document.getElementById('snare-one')
@@ -79,6 +81,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   const tempoUpButton = document.getElementById('tempo-up-button')
   const tempoDownButton = document.getElementById('tempo-down-button')
+
+  const shuffleUpButton = document.getElementById('shuffle-up-button')
+  const shuffleDownButton = document.getElementById('shuffle-down-button')
 
 
 
@@ -407,6 +412,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       break;
 
       case "play":
+
       if (playButton.className === "play-button"){playButton.className = "play-button-lit"; stopButton.className = "stop-button"}
       else {playButton.className = "play-button"; stopButton.className = "stop-button-lit"}
       break;
@@ -427,6 +433,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementTempo()
       break;
 
+      case "shuffle-up":
+      shuffleUpButton.className = "shuffle-up-button-lit"
+      setTimeout(()=>{shuffleUpButton.className = "shuffle-up-button"}, 300)
+      incrementShuffle()
+      break;
+
+      case "shuffle-down":
+      shuffleDownButton.className = "shuffle-down-button-lit"
+      setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
+      decrementShuffle()
+      break;
+
 
 
     }
@@ -442,6 +460,19 @@ let currentTempo = 125;
     currentTempo -= 1
     $("#tempo-screen").sevenSeg({ value: currentTempo});
   }
+
+let currentShuffle = 0
+
+function incrementShuffle(){
+  currentShuffle += 1
+  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
+}
+
+function decrementShuffle(){
+  currentShuffle -= 1
+  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
+}
+
 
 
   // kick.play()

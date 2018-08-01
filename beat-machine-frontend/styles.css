@@ -3,6 +3,10 @@ body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+p {
+  font-size: 13px;
+}
+
 h1 {
   text-align: right;
   color:  white;
@@ -64,7 +68,7 @@ h4 {
   margin: 0px auto;
   height: 900px;
   width: 1600px;
-  background: url('svg/buttons/beat-machine-bkg-13.svg');
+  background: url('svg/buttons/beat-machine-bkg-15.svg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -76,6 +80,10 @@ h4 {
   margin 0px auto;
   width: 1100px;
   padding-top: 3%;
+}
+
+#buttons {
+  margin-left: 400px;
 }
 
 #app-title {
@@ -153,10 +161,9 @@ h4 {
 }
 
 .play-button {
-  margin-top: 500px;
-  margin-left: 640px;
-  margin-right: 200px;
-  margin-bottom: 200px;
+  margin-top: 505px;
+  margin-left: 0px;
+
 
   height: 100px;
   width: 100px;
@@ -168,10 +175,8 @@ h4 {
 }
 
 .play-button-lit {
-  margin-top: 500px;
-  margin-left: 640px;
-  margin-right: 200px;
-  margin-bottom: 200px;
+  margin-top: 505px;
+  margin-left: 0px;
 
   height: 100px;
   width: 100px;
@@ -183,10 +188,8 @@ h4 {
 }
 
 .stop-button {
-  margin-top: 500px;
+  margin-top: -100px;
   margin-left: 65px;
-  margin-right: 200px;
-  margin-bottom: 200px;
 
   height: 100px;
   width: 100px;
@@ -198,10 +201,8 @@ h4 {
 }
 
 .stop-button-lit {
-  margin-top: 500px;
+  margin-top: -100px;
   margin-left: 65px;
-  margin-right: 200px;
-  margin-bottom: 200px;
 
   height: 100px;
   width: 100px;
@@ -213,10 +214,8 @@ h4 {
 }
 
 .tempo-up-button {
-  margin-top: -289px;
-  margin-left: 124px;
-  margin-right: 200px;
-  margin-bottom: 200px;
+  margin-top: -89px;
+  margin-left: 140px;
 
   height: 50px;
   width: 100px;
@@ -227,10 +226,8 @@ h4 {
 }
 
 .tempo-up-button-lit {
-  margin-top: -289px;
-  margin-left: 124px;
-  margin-right: 200px;
-  margin-bottom: 200px;
+  margin-top: -89px;
+  margin-left: 140px;
 
   height: 50px;
   width: 100px;
@@ -241,11 +238,8 @@ h4 {
 }
 
 .tempo-down-button {
-  margin-top: -221px;
-  margin-left: 124px;
-  margin-right: 200px;
-  margin-bottom: 200px;
-
+  margin-top: -22px;
+  margin-left: 140px;
   height: 50px;
   width: 100px;
   background: url('svg/buttons/button-tempo-down.svg');
@@ -255,10 +249,57 @@ h4 {
 }
 
 .tempo-down-button-lit {
-  margin-top: -221px;
-  margin-left: 124px;
-  margin-right: 200px;
-  margin-bottom: 200px;
+  margin-top: -22px;
+  margin-left: 140px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down-lit.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-up-button {
+  margin-top: -61px;
+  margin-left: 321px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-up-button-lit {
+  margin-top: -61px;
+  margin-left: 321px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up-lit.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.shuffle-down-button {
+  margin-top: -23px;
+  margin-left: 321px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-down-button-lit {
+  margin-top: -23px;
+  margin-left: 321px;
 
   height: 50px;
   width: 100px;
@@ -269,9 +310,15 @@ h4 {
 }
 
 #tempo-container {
-  margin-top: -263px;
-  margin-left: 195px;
-  margin-bottom: 1000px
+  margin-top: -62px;
+  margin-left: 210px;
+
+}
+
+#shuffle-container {
+  margin-top: -62px;
+  margin-left: 393px;
+  margin-bottom: 0px
 
 }
 
@@ -280,7 +327,32 @@ h4 {
   height: 30px;
   width: 75px;
 
+}
 
+#shuffle-screen{
+  padding: 0.5em;
+  height: 30px;
+  width: 75px;
+
+}
+
+
+#buttons {
+  margin-top: 50px;
+  margin-left: 539px;
+
+}
+
+#play-label {
+  margin-top: -219px;
+  margin-left: 575px;
+  margin-bottom: 200px;
+}
+
+#stop-label {
+  margin-top: -215px;
+  margin-left: 642px;
+  margin-bottom: 200px;
 }
 
 .digital-screen {
