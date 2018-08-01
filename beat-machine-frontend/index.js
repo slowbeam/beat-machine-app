@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
-  
+
+
+  $("#tempo-screen").sevenSeg({ digits: 3, value: 125, decimalPoint: false, allowInput: false});
 
   const rootDiv = document.getElementById('main-container')
 
@@ -74,6 +76,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   const playButton = document.getElementById('play-button')
   const stopButton = document.getElementById('stop-button')
+
+  const tempoUpButton = document.getElementById('tempo-up-button')
+  const tempoDownButton = document.getElementById('tempo-down-button')
+
 
 
 
@@ -407,6 +413,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
       case "stop":
       if (stopButton.className === "stop-button"){stopButton.className = "stop-button-lit"; playButton.className = "play-button"}
+      break;
+
+      case "tempo-up":
+      tempoUpButton.className = "tempo-up-button-lit"
+      setTimeout(()=>{tempoUpButton.className = "tempo-up-button"}, 300)
+      incrementTempo()
+      break;
+
+      case "tempo-down":
+      tempoDownButton.className = "tempo-down-button-lit"
+      setTimeout(()=>{tempoDownButton.className = "tempo-down-button"}, 300)
+      decrementTempo()
+      break;
 
 
 
@@ -414,6 +433,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
   })
   var kick = new Audio('audio/LF_kick_08.wav')
 
+
+let currentTempo = 125;
+  function incrementTempo(){
+    currentTempo += 1
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
+
+  function  decrementTempo(){
+    currentTempo -= 1
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
 
 
   // kick.play()

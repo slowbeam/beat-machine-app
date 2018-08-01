@@ -169,7 +169,7 @@ h4 {
 
 .play-button-lit {
   margin-top: 500px;
-  margin-left: 690px;
+  margin-left: 640px;
   margin-right: 200px;
   margin-bottom: 200px;
 
@@ -212,9 +212,65 @@ h4 {
 
 }
 
+.tempo-up-button {
+  margin-top: -289px;
+  margin-left: 124px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-up-button-lit {
+  margin-top: -289px;
+  margin-left: 124px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up-lit.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-down-button {
+  margin-top: -221px;
+  margin-left: 124px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-down-button-lit {
+  margin-top: -221px;
+  margin-left: 124px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 50px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down-lit.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #tempo-container {
-  margin-top: -273px;
-  margin-left: 190px;
+  margin-top: -263px;
+  margin-left: 195px;
   margin-bottom: 1000px
 
 }
