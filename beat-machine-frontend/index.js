@@ -182,9 +182,9 @@ function stopPlay() {
 //   clearInterval(playback)
 //   stepCount = 1 // resets sequence to beginning
 // }
-
+//
 // function playBeats() {
-//   console.log(stepCount);
+//   // console.log(stepCount);
 //
 //   steps[stepCount - 1].notes.forEach(function(note) {
 //     note.audio.play()
