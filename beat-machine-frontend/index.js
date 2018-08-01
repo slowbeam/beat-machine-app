@@ -107,6 +107,14 @@ addNoteToSequence('cowBell', 12)
 addNoteToSequence('clap', 3)
 addNoteToSequence('clap', 6)
 
+// addNoteToSequence('kick', 0)
+// addNoteToSequence('kick', 4)
+// addNoteToSequence('kick', 8)
+// addNoteToSequence('kick', 12)
+// addNoteToSequence('hiHatClosed', 1)
+// addNoteToSequence('hiHatOpen', 2)
+// addNoteToSequence('clap', 4)
+
 function removeNoteFromSequence(instrument, stepNum) {
   let targetIndex;
   let notes = steps[stepNum].notes
@@ -121,33 +129,69 @@ function changeVolumeOfInstrument(instrument, level) {
   loadedDrumKit[instrument].forEach(audioEl=>audioEl.volume = level)
 }
 
-let playBack;
+let playback;
 let tempo = 100
+let stepCount = 1
+let shuffle = 0
 
-function setTempo(tempo) {
+function setTempo(n) {
+  tempo = n
+}
+
+function setShuffle(n) {
+  shuffle = n
+}
+
+function parseTempo(tempo) {
   return (60000 / tempo) / 4
 }
 
+function shuffleOffset() {
+  if (stepCount % 2 === 0) {
+    return 1 + shuffle
+  } else {
+    return 1 - shuffle
+  }
+}
+
 function startPlay() {
-  stepCount = 1
-  playBack = setInterval(playBeats, setTempo(tempo))
+  playback = setTimeout(function playBeats() {
+    console.log(stepCount);
+
+    steps[stepCount - 1].notes.forEach(function(note) {
+      note.audio.play()
+    })
+    if (stepCount === 16){
+      stepCount = 1
+    } else {
+      stepCount++
+    }
+    playback = setTimeout(playBeats, (parseTempo(tempo) * shuffleOffset()));
+  }, (parseTempo(tempo)));
 }
 
 function stopPlay() {
-  clearInterval(playBack)
+  clearTimeout(playback)
+  // stepCount = 1 // resets sequence to beginning
 }
 
-function playBeats() {
-  console.log(stepCount);
+// function startPlay() {
+//   playback = setInterval(playBeats, parseTempo(tempo))
+// }
+// function stopPlay() {
+//   clearInterval(playback)
+//   stepCount = 1 // resets sequence to beginning
+// }
 
-  steps[stepCount - 1].notes.forEach(function(note) {
-    note.audio.play()
-    // console.log(note);
-  })
-
-  if (stepCount === 16){
-    stepCount = 1
-  } else {
-    stepCount++
-  }
-}
+// function playBeats() {
+//   console.log(stepCount);
+//
+//   steps[stepCount - 1].notes.forEach(function(note) {
+//     note.audio.play()
+//   })
+//   if (stepCount === 16){
+//     stepCount = 1
+//   } else {
+//     stepCount++
+//   }
+// }
