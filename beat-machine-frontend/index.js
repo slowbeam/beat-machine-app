@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const cHatSixteen = document.getElementById('c-hat-sixteen')
 
   const playButton = document.getElementById('play-button')
+  const stopButton = document.getElementById('stop-button')
 
 
 
@@ -398,9 +399,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
       break;
 
       case "play":
-      if (playButton.className === "play-button"){playButton.className = "play-button-lit"}
-      else {playButton.className = "play-button"}
-      
+      if (playButton.className === "play-button"){playButton.className = "play-button-lit"; stopButton.className = "stop-button"}
+      else {playButton.className = "play-button"; stopButton.className = "stop-button-lit"}
+      break;
+
+      case "stop":
+      if (stopButton.className === "stop-button"){stopButton.className = "stop-button-lit"; playButton.className = "play-button"}
+
+
 
     }
   })

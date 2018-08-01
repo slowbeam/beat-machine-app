@@ -181,3 +181,33 @@ h4 {
   background-position: center;
 
 }
+
+.stop-button {
+  margin-top: 500px;
+  margin-left: 65px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 100px;
+  width: 100px;
+  background: url('svg/buttons/button-stop.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.stop-button-lit {
+  margin-top: 500px;
+  margin-left: 65px;
+  margin-right: 200px;
+  margin-bottom: 200px;
+
+  height: 100px;
+  width: 100px;
+  background: url('svg/buttons/button-stop-lit.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
