@@ -70,7 +70,7 @@ h4 {
   margin: 0px auto;
   height: 900px;
   width: 1600px;
-  background: url('svg/buttons/beat-machine-bkg-16.svg');
+  background: url('svg/buttons/beat-machine-bkg-17.svg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -89,6 +89,7 @@ h4 {
 }
 
 #app-title {
+  visibility: hidden;
   padding-top: 85px;
   padding-right: 258px;
   padding-bottom: 0px;
