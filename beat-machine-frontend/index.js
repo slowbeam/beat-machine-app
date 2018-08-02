@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let playback;
   let currentTempo = 120
   let stepCount = 1
-  // let shuffle = 0.0
-  let shuffle = 0.29
+  let currentShuffle = 0.0
 
   // let drumKit = {
   //   kick: 'audio/LF_kick_08.wav',
@@ -77,34 +76,48 @@ document.addEventListener("DOMContentLoaded", ()=>{
   //   loadedDrumKit[instrument].forEach(audioEl=>audioEl.volume = level)
   // }
 
-  function setShuffle(n) {
-    shuffle = n
-  }
-
   function parseTempo(currentTempo) {
     return (60000 / currentTempo) / 4
   }
 
   function shuffleOffset() {
     if (stepCount % 2 === 0) {
-      return 1 + shuffle
+      return 1 + currentShuffle
     } else {
-      return 1 - shuffle
+      return 1 - currentShuffle
     }
   }
 
-  function parseShuffle(shuffle) {
-    return shuffle / 100
+  function parseShuffle(currentShuffle) {
+    return Math.round(currentShuffle * 100)
   }
 
   function incrementTempo(){
+    if (currentTempo < 150){
     currentTempo += 1
     $("#tempo-screen").sevenSeg({ value: currentTempo});
+    }
   }
 
   function  decrementTempo(){
+    if (currentTempo > 60){
     currentTempo -= 1
     $("#tempo-screen").sevenSeg({ value: currentTempo});
+    }
+  }
+
+  function incrementShuffle(){
+    if (currentShuffle < 0.50){
+    currentShuffle = (Math.round(currentShuffle * 100) + 1) / 100
+    $("#shuffle-screen").sevenSeg({ value: parseShuffle(currentShuffle) || '0'});
+    }
+  }
+
+  function decrementShuffle(){
+    if (currentShuffle > 0){
+    currentShuffle = (Math.round(currentShuffle * 100) - 1) / 100
+    $("#shuffle-screen").sevenSeg({ value: parseShuffle(currentShuffle) || '0'});
+    }
   }
 
   function startPlay() {
@@ -140,77 +153,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false});
 
-  $("#shuffle-screen").sevenSeg({ digits: 2, value: 0, decimalPoint: false, allowInput: false});
+  $("#shuffle-screen").sevenSeg({ digits: 2, value: parseShuffle(currentShuffle) || '0', decimalPoint: false, allowInput: false});
 
   const rootDiv = document.getElementById('main-container')
-
-  // const snareOne = document.getElementById('snare-one')
-  // const snareTwo = document.getElementById('snare-two')
-  // const snareThree = document.getElementById('snare-three')
-  // const snareFour = document.getElementById('snare-four')
-  // const snareFive = document.getElementById('snare-five')
-  // const snareSix = document.getElementById('snare-six')
-  // const snareSeven = document.getElementById('snare-seven')
-  // const snareEight = document.getElementById('snare-eight')
-  // const snareNine = document.getElementById('snare-nine')
-  // const snareTen = document.getElementById('snare-ten')
-  // const snareEleven = document.getElementById('snare-eleven')
-  // const snareTwelve = document.getElementById('snare-twelve')
-  // const snareThirteen = document.getElementById('snare-thirteen')
-  // const snareFourteen = document.getElementById('snare-fourteen')
-  // const snareFifteen = document.getElementById('snare-fifteen')
-  // const snareSixteen = document.getElementById('snare-sixteen')
-  //
-  // const kickOne = document.getElementById('kick-one')
-  // const kickTwo = document.getElementById('kick-two')
-  // const kickThree = document.getElementById('kick-three')
-  // const kickFour = document.getElementById('kick-four')
-  // const kickFive = document.getElementById('kick-five')
-  // const kickSix = document.getElementById('kick-six')
-  // const kickSeven = document.getElementById('kick-seven')
-  // const kickEight = document.getElementById('kick-eight')
-  // const kickNine = document.getElementById('kick-nine')
-  // const kickTen = document.getElementById('kick-ten')
-  // const kickEleven = document.getElementById('kick-eleven')
-  // const kickTwelve = document.getElementById('kick-twelve')
-  // const kickThirteen = document.getElementById('kick-thirteen')
-  // const kickFourteen = document.getElementById('kick-fourteen')
-  // const kickFifteen = document.getElementById('kick-fifteen')
-  // const kickSixteen = document.getElementById('kick-sixteen')
-  //
-  // const oHatOne = document.getElementById('o-hat-one')
-  // const oHatTwo = document.getElementById('o-hat-two')
-  // const oHatThree = document.getElementById('o-hat-three')
-  // const oHatFour = document.getElementById('o-hat-four')
-  // const oHatFive = document.getElementById('o-hat-five')
-  // const oHatSix = document.getElementById('o-hat-six')
-  // const oHatSeven = document.getElementById('o-hat-seven')
-  // const oHatEight = document.getElementById('o-hat-eight')
-  // const oHatNine = document.getElementById('o-hat-nine')
-  // const oHatTen = document.getElementById('o-hat-ten')
-  // const oHatEleven = document.getElementById('o-hat-eleven')
-  // const oHatTwelve = document.getElementById('o-hat-twelve')
-  // const oHatThirteen = document.getElementById('o-hat-thirteen')
-  // const oHatFourteen = document.getElementById('o-hat-fourteen')
-  // const oHatFifteen = document.getElementById('o-hat-fifteen')
-  // const oHatSixteen = document.getElementById('o-hat-sixteen')
-  //
-  // const cHatOne = document.getElementById('c-hat-one')
-  // const cHatTwo = document.getElementById('c-hat-two')
-  // const cHatThree = document.getElementById('c-hat-three')
-  // const cHatFour = document.getElementById('c-hat-four')
-  // const cHatFive = document.getElementById('c-hat-five')
-  // const cHatSix = document.getElementById('c-hat-six')
-  // const cHatSeven = document.getElementById('c-hat-seven')
-  // const cHatEight = document.getElementById('c-hat-eight')
-  // const cHatNine = document.getElementById('c-hat-nine')
-  // const cHatTen = document.getElementById('c-hat-ten')
-  // const cHatEleven = document.getElementById('c-hat-eleven')
-  // const cHatTwelve = document.getElementById('c-hat-twelve')
-  // const cHatThirteen = document.getElementById('c-hat-thirteen')
-  // const cHatFourteen = document.getElementById('c-hat-fourteen')
-  // const cHatFifteen = document.getElementById('c-hat-fifteen')
-  // const cHatSixteen = document.getElementById('c-hat-sixteen')
 
   const playButton = document.getElementById('play-button')
   const stopButton = document.getElementById('stop-button')
@@ -260,39 +205,56 @@ document.addEventListener("DOMContentLoaded", ()=>{
       tempoDownButton.className = "tempo-down-button-lit"
       setTimeout(()=>{tempoDownButton.className = "tempo-down-button"}, 300)
       decrementTempo()
-
-      // case "shuffle-up":
-      // shuffleUpButton.className = "shuffle-up-button-lit"
-      // setTimeout(()=>{shuffleUpButton.className = "shuffle-up-button"}, 300)
-      // incrementShuffle()
-      // break;
-      //
-      // case "shuffle-down":
-      // shuffleDownButton.className = "shuffle-down-button-lit"
-      // setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
-      // decrementShuffle()
-      // break;
-
+    }
+    if (event.target.dataset.action === "shuffle-up"){
+      shuffleUpButton.className = "shuffle-up-button-lit"
+      setTimeout(()=>{shuffleUpButton.className = "shuffle-up-button"}, 300)
+      incrementShuffle()
+    }
+    if (event.target.dataset.action === "shuffle-down"){
+      shuffleDownButton.className = "shuffle-down-button-lit"
+      setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
+      decrementShuffle()
     }
 
   })
 
+  document.body.addEventListener('keyup', function(event) {
+    if (event.code === 'Space'){
+      event.preventDefault()
+      if (playButton.className === "play-button"){playButton.className = "play-button-lit"; stopButton.className = "stop-button"; startPlay()}
+      else {playButton.className = "play-button"; stopButton.className = "stop-button-lit"; stopPlay()}
+    }
+  })
+
+  document.body.addEventListener('keydown', function(event){
+    if (event.code === 'ArrowUp'){
+      event.preventDefault()
+      tempoUpButton.className = "tempo-up-button-lit"
+      setTimeout(()=>{tempoUpButton.className = "tempo-up-button"}, 300)
+      incrementTempo()
+    }
+    if (event.code === 'ArrowDown'){
+      event.preventDefault()
+      tempoDownButton.className = "tempo-down-button-lit"
+      setTimeout(()=>{tempoDownButton.className = "tempo-down-button"}, 300)
+      decrementTempo()
+    }
+    if (event.code === 'ArrowRight'){
+      event.preventDefault()
+      shuffleUpButton.className = "shuffle-up-button-lit"
+      setTimeout(()=>{shuffleUpButton.className = "shuffle-up-button"}, 300)
+      incrementShuffle()
+    }
+    if (event.code === 'ArrowLeft'){
+      event.preventDefault()
+      shuffleDownButton.className = "shuffle-down-button-lit"
+      setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
+      decrementShuffle()
+    }
+  })
+
 })
-
-
-let currentShuffle = 0
-
-function incrementShuffle(){
-  currentShuffle += 1
-  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
-}
-
-function decrementShuffle(){
-  currentShuffle -= 1
-  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
-}
-
-
 
 
 
