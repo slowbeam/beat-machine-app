@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   instantiateSteps()
 
   let playback;
+  let loadedDrumKit;
+  loadDrumKit('trap')
   let currentTempo = 120
   let stepCount = 1
   let currentShuffle = 0.0
@@ -37,27 +39,29 @@ document.addEventListener("DOMContentLoaded", ()=>{
   //   clap: 'audio/Roland TR-808/Clap.wav'
   // }
 
-  let drumKit = {
-    kick:'audio/Roland TR-909/Bassdrum-03.wav',
-    snare:'audio/Roland TR-909/Clap.wav',
-    ohat:'audio/Roland TR-909/Hat Open.wav',
-    chat:'audio/Roland TR-909/Hat Closed.wav',
-  }
+  // let drumKit = {
+  //   kick:'audio/Roland TR-909/Bassdrum-03.wav',
+  //   snare:'audio/Roland TR-909/Clap.wav',
+  //   ohat:'audio/Roland TR-909/Hat Open.wav',
+  //   chat:'audio/Roland TR-909/Hat Closed.wav',
+  // }
+  //
+  // function instantiateDrumKit(drumKit){
+  //   for (let instrument in drumKit){
+  //     let sampleObjects = []
+  //     let count = 1
+  //     while (count <= 16) {
+  //       sampleObjects.push(new Audio(drumKit[instrument]))
+  //       count++
+  //     }
+  //     drumKit[instrument] = sampleObjects
+  //   }
+  //   return drumKit
+  // }
 
-  function instantiateDrumKit(drumKit){
-    for (let instrument in drumKit){
-      let sampleObjects = []
-      let count = 1
-      while (count <= 16) {
-        sampleObjects.push(new Audio(drumKit[instrument]))
-        count++
-      }
-      drumKit[instrument] = sampleObjects
-    }
-    return drumKit
+  function loadDrumKit(name) {
+    loadedDrumKit = new DrumKit(name)
   }
-
-  const loadedDrumKit = instantiateDrumKit(drumKit)
 
   function addNoteToSequence(instrument, stepNum) {
     new Note(instrument, steps[stepNum - 1])
@@ -123,7 +127,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   function startPlay() {
     playback = setTimeout(function playBeats() {
       console.log(stepCount);
-
       steps[stepCount - 1].notes.forEach(function(note) {
         loadedDrumKit[note.instrument][stepCount - 1].play()
       })
@@ -259,10 +262,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementShuffle()
     }
   })
-
-
-
-
 
 // function startPlay() {
 //   playback = setInterval(playBeats, parseTempo(currentTempo))
