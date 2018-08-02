@@ -1,6 +1,12 @@
+
+
 body {
   background-color: lightGrey;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+p {
+  font-size: 13px;
 }
 
 h1 {
@@ -60,7 +66,7 @@ h4 {
 }
 
 .button-wrapper {
-  min-height: 75px
+  min-height: 75px /*missing semicolon */
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5px;
@@ -72,7 +78,7 @@ h4 {
   margin: 0px auto;
   height: 900px;
   width: 1600px;
-  background: url('svg/buttons/beat-machine-bkg-7.svg');
+  background: url('svg/buttons/beat-machine-bkg-18.svg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -86,7 +92,12 @@ h4 {
   padding-top: 3%;
 }
 
+#buttons {
+  margin-left: 400px;
+}
+
 #app-title {
+  visibility: hidden;
   padding-top: 85px;
   padding-right: 258px;
   padding-bottom: 0px;
@@ -159,3 +170,202 @@ h4 {
   background-size: 42px 75px;
   background-repeat: no-repeat;
 }
+
+
+.control-panel-container {
+  margin-top: 513px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.control-buttons {
+
+  margin-left: -16px;
+  width: 580px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.play-button {
+
+  height: 75px;
+  width: 75px;
+  background: url('svg/buttons/button-play.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.play-button-lit {
+
+  height: 75px;
+  width: 75px;
+  background: url('svg/buttons/button-play-lit.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.stop-button {
+
+  height: 75px;
+  width: 75px;
+  background: url('svg/buttons/button-stop.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.stop-button-lit {
+
+  height: 75px;
+  width: 75px;
+  background: url('svg/buttons/button-stop-lit.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.tempo-up-button {
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-up-button-lit {
+
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up-lit.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-down-button {
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-down-button-lit {
+
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down-lit.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-up-button {
+
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-up-button-lit {
+
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-up-lit.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.shuffle-down-button {
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shuffle-down-button-lit {
+
+  height: 28px;
+  width: 100px;
+  background: url('svg/buttons/button-tempo-down-lit.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tempo-container {
+  height: 60px;
+  width: 110px;
+  align-self: center;
+}
+
+.shuffle-container {
+  height: 60px;
+  width: 110px;
+  align-self: center;
+}
+
+.tempo {
+
+  display: flex;
+  margin-top: 20px
+  height: 68px;
+  width: 250px;
+  align-content: center;
+  justify-content: space-around;
+
+}
+
+.tempo-up-down {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.shuffle {
+
+  display: flex;
+  margin-top: 20px
+  height: 68px;
+  width: 220px;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.shuffle-up-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.digital-screen {
+
+       display: inline-block;
+       background-color: Black;
+       border-radius: 10px;
+       margin-left: 12px;
+   }

@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="src/styles.css">
-    <script type="text/javascript" src="Adapter.js"></script>
-    <script type="text/javascript" src="src/models.js"></script>
-    <script type="text/javascript" src="src/index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="models.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="sevenSeg.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
   </head>
   <body>
     <div id="main-container">
@@ -19,12 +23,13 @@
         <div id="app-title">
           <h1>Beat-Machine</h1>
         </div>
+
         <div class="buttons">
           <div class="button-row" id="kick">
 
             <div class="button-wrapper">
               <div class="inst-title">
-                <h4>kick</h4>
+
               </div>
 
               <div data-action="kick-1" id="kick-1" class="sequencer-button purple-button">
@@ -83,7 +88,7 @@
 
             <div class="button-wrapper">
               <div class="inst-title">
-                <h4>snare</h4>
+
               </div>
 
               <div data-action="snare-1" id="snare-1" class="sequencer-button magenta-button">
@@ -142,7 +147,7 @@
           <div class="button-row" id="open-hi-hat">
             <div class="button-wrapper">
               <div class="inst-title">
-                <h4>open hi-hat</h4>
+
               </div>
 
               <div data-action="ohat-1" id="ohat-1" class="sequencer-button green-button">
@@ -200,7 +205,7 @@
 
             <div class="button-wrapper">
               <div class="inst-title">
-                <h4>closed hi-hat</h4>
+
               </div>
 
               <div data-action="chat-1" id="chat-1" class="sequencer-button blue-button">
@@ -250,14 +255,54 @@
 
               <div data-action="chat-16" id="chat-16" class="sequencer-button blue-button">
               </div>
+
             </div>
           </div>
-
-        </div>
         </div>
 
 
+        <div class="control-panel-container">
 
+          <div class="control-buttons">
+            <div data-action="play" id="play-button" class="play-button">
+            </div>
+
+            <div data-action="stop" id="stop-button" class="stop-button-lit">
+            </div>
+
+            <div class="tempo">
+              <div class="tempo-up-down">
+                <div data-action="tempo-up" id="tempo-up-button" class="tempo-up-button"></div>
+                <div data-action="tempo-down" id="tempo-down-button" class="tempo-down-button"></div>
+              </div>
+
+              <div class="tempo-container digital-screen" id="tempo-screen"></div>
+            </div>
+
+
+
+            <div class="shuffle">
+              <div class="shuffle-up-down">
+                <div data-action="shuffle-up" id="shuffle-up-button" class="shuffle-up-button"></div>
+
+                <div data-action="shuffle-down" id="shuffle-down-button" class="shuffle-down-button"></div>
+              </div>
+
+              <div class="shuffle-container digital-screen" id="shuffle-screen"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
+
+
+
+
+
+
+
+
   </body>
 </html>
