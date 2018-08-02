@@ -174,7 +174,7 @@ h4 {
 .control-buttons {
 
   margin-left: -16px;
-  width: 600px;
+  width: 580px;
   display: flex;
   justify-content: space-around;
   align-content: center;
@@ -322,7 +322,7 @@ h4 {
   display: flex;
   margin-top: 20px
   height: 68px;
-  width: 200px;
+  width: 250px;
   align-content: center;
   justify-content: space-around;
 
@@ -341,7 +341,7 @@ h4 {
   display: flex;
   margin-top: 20px
   height: 68px;
-  width: 200px;
+  width: 220px;
   align-content: center;
   justify-content: space-around;
 }
