@@ -429,7 +429,7 @@ input[type=submit] {
     font-size: 30px;
     border-radius: 15px;
     background-color: #f4b876;
-    box-shadow: 3px 3px 12px #888888;
+    box-shadow: 3px 3px 1px #888888;
     color: white;
     transition: .1s;
     transform: scale(1);
