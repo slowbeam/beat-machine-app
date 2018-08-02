@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
   })
 
-})
+
 
 
 
@@ -322,3 +322,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 // addNoteToSequence('hiHatClosed', 1)
 // addNoteToSequence('hiHatOpen', 2)
 // addNoteToSequence('clap', 4)
+
+})
