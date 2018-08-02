@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: 125, decimalPoint: false, allowInput: false});
 
-  $("#shuffle-screen").sevenSeg({ digits: 2, value: 0, decimalPoint: false, allowInput: false});
+  $("#shuffle-screen").sevenSeg({ digits: 3, value: 0, decimalPoint: false, allowInput: false});
 
   const rootDiv = document.getElementById('main-container')
 

@@ -1,3 +1,5 @@
+
+
 body {
   background-color: lightGrey;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -68,7 +70,7 @@ h4 {
   margin: 0px auto;
   height: 900px;
   width: 1600px;
-  background: url('svg/buttons/beat-machine-bkg-15.svg');
+  background: url('svg/buttons/beat-machine-bkg-16.svg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -160,213 +162,201 @@ h4 {
   background-repeat: no-repeat;
 }
 
+
+.control-panel-container {
+  margin-top: 513px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.control-buttons {
+
+  margin-left: -16px;
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
 .play-button {
-  margin-top: 505px;
-  margin-left: 0px;
 
-
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   background: url('svg/buttons/button-play.svg');
-  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
 
 }
 
 .play-button-lit {
-  margin-top: 505px;
-  margin-left: 0px;
 
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   background: url('svg/buttons/button-play-lit.svg');
-  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
 
 }
 
 .stop-button {
-  margin-top: -100px;
-  margin-left: 65px;
 
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   background: url('svg/buttons/button-stop.svg');
-  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
 
 }
 
 .stop-button-lit {
-  margin-top: -100px;
-  margin-left: 65px;
 
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   background: url('svg/buttons/button-stop-lit.svg');
-  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
 
 }
 
 .tempo-up-button {
-  margin-top: -89px;
-  margin-left: 140px;
 
-  height: 50px;
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-up.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .tempo-up-button-lit {
-  margin-top: -89px;
-  margin-left: 140px;
 
-  height: 50px;
+
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-up-lit.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .tempo-down-button {
-  margin-top: -22px;
-  margin-left: 140px;
-  height: 50px;
+
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-down.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .tempo-down-button-lit {
-  margin-top: -22px;
-  margin-left: 140px;
 
-  height: 50px;
+
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-down-lit.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .shuffle-up-button {
-  margin-top: -61px;
-  margin-left: 321px;
 
-  height: 50px;
+
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-up.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .shuffle-up-button-lit {
-  margin-top: -61px;
-  margin-left: 321px;
 
-  height: 50px;
+
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-up-lit.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 
 .shuffle-down-button {
-  margin-top: -23px;
-  margin-left: 321px;
 
-  height: 50px;
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-down.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .shuffle-down-button-lit {
-  margin-top: -23px;
-  margin-left: 321px;
 
-  height: 50px;
+  height: 28px;
   width: 100px;
   background: url('svg/buttons/button-tempo-down-lit.svg');
-  background-size: 60%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#tempo-container {
-  margin-top: -62px;
-  margin-left: 210px;
+.tempo-container {
+  height: 60px;
+  width: 110px;
+  align-self: center;
+}
+
+.shuffle-container {
+  height: 60px;
+  width: 110px;
+  align-self: center;
+}
+
+.tempo {
+
+  display: flex;
+  margin-top: 20px
+  height: 68px;
+  width: 200px;
+  align-content: center;
+  justify-content: space-around;
 
 }
 
-#shuffle-container {
-  margin-top: -62px;
-  margin-left: 393px;
-  margin-bottom: 0px
+.tempo-up-down {
 
-}
-
-#tempo-screen{
-  padding: 0.5em;
-  height: 30px;
-  width: 75px;
-
-}
-
-#shuffle-screen{
-  padding: 0.5em;
-  height: 30px;
-  width: 75px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 
-#buttons {
-  margin-top: 50px;
-  margin-left: 539px;
+.shuffle {
 
+  display: flex;
+  margin-top: 20px
+  height: 68px;
+  width: 200px;
+  align-content: center;
+  justify-content: space-around;
 }
 
-#play-label {
-  margin-top: -219px;
-  margin-left: 575px;
-}
-
-#stop-label {
-  margin-top: -28px;
-  margin-left: 642px;
-}
-
-#tempo-label {
-  margin-top: -29px;
-  margin-left: 788px;
-}
-
-#shuffle-label {
-  margin-top: -29px;
-  margin-left: 970px;
+.shuffle-up-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 
 .digital-screen {
+
        display: inline-block;
        background-color: Black;
-       border-radius: 5px;
+       border-radius: 10px;
        margin-left: 12px;
    }
