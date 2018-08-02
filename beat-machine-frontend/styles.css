@@ -89,7 +89,7 @@ h4 {
   padding-right: 10%;
   margin 0px auto;
   width: 1100px;
-  padding-top: 3%;
+  padding-top: 0%;
 }
 
 #buttons {
@@ -101,6 +101,26 @@ h4 {
   padding-top: 85px;
   padding-right: 258px;
   padding-bottom: 0px;
+}
+
+.status-light {
+    width: 40px;
+    height: 50px;
+
+    background: url('svg/buttons/status-light.svg');
+    background-size: 42px 75px;
+    background-repeat: no-repeat;
+
+}
+
+.status-light-lit {
+    width: 40px;
+    height: 50px;
+
+    background: url('svg/buttons/status-light-lit.svg');
+    background-size: 42px 75px;
+    background-repeat: no-repeat;
+
 }
 
 .svg-button {
