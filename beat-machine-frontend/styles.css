@@ -19,6 +19,14 @@ h4 {
   display: inline;
 }
 
+#playback-controls {
+  text-align: center;
+}
+
+#playback-controls button {
+  padding: 10px;
+}
+
 .inst-button {
     background-color: #4CAF50;
     border-radius: 4px;
@@ -58,7 +66,7 @@ h4 {
 }
 
 .button-wrapper {
-  min-height: 75px
+  min-height: 75px /*missing semicolon */
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5px;
