@@ -151,9 +151,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   //   currentLight.innerHTML += '-lit'
   // }
 
-  $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false});
+  $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
-  $("#shuffle-screen").sevenSeg({ digits: 2, value: parseShuffle(currentShuffle) || '0', decimalPoint: false, allowInput: false});
+  $("#shuffle-screen").sevenSeg({ digits: 3, value: parseShuffle(currentShuffle) || '0', decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
   const rootDiv = document.getElementById('main-container')
 
