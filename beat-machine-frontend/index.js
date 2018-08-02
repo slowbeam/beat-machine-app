@@ -128,11 +128,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         loadedDrumKit[note.instrument][stepCount - 1].play()
       })
       if (stepCount === 16){
+        advanceLights()
         stepCount = 1
-        // advanceLights()
       } else {
+        advanceLights()
         stepCount++
-        // advanceLights()
       }
       playback = setTimeout(playBeats, (parseTempo(currentTempo) * shuffleOffset()));
     }, (parseTempo(currentTempo)));
@@ -143,13 +143,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // stepCount = 1 // resets sequence to beginning
   }
 
-  // function advanceLights() {
-  //   let previousLight = document.querySelector(`#sequence-light-${stepCount - 1}`)
-  //   previousLight.innerHTML.split('-').pop()
-  //   previousLight.innerHTML = previousLight.innerHTML.join('-')
-  //   let currentLight = document.querySelector(`#sequence-light-${stepCount}`)
-  //   currentLight.innerHTML += '-lit'
-  // }
+  function advanceLights() {
+    let previousLight;
+    if (stepCount === 1){
+      previousLight = document.querySelector(`#status-light-16`)
+    } else {
+      previousLight = document.querySelector(`#status-light-${stepCount - 1}`)
+    }
+    if (previousLight.className.includes('lit')){
+      previousLight.className = 'status-light'
+    }
+    let currentLight = document.querySelector(`#status-light-${stepCount}`)
+    currentLight.className += '-lit'
+  }
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
