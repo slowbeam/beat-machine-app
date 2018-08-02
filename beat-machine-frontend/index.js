@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false});
 
+  $("#shuffle-screen").sevenSeg({ digits: 2, value: 0, decimalPoint: false, allowInput: false});
+
   const rootDiv = document.getElementById('main-container')
 
   // const snareOne = document.getElementById('snare-one')
@@ -216,6 +218,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const tempoUpButton = document.getElementById('tempo-up-button')
   const tempoDownButton = document.getElementById('tempo-down-button')
 
+  const shuffleUpButton = document.getElementById('shuffle-up-button')
+  const shuffleDownButton = document.getElementById('shuffle-down-button')
+
   rootDiv.addEventListener("click", function(event){
 
     if (event.target.className.includes('sequencer-button')){
@@ -255,11 +260,37 @@ document.addEventListener("DOMContentLoaded", ()=>{
       tempoDownButton.className = "tempo-down-button-lit"
       setTimeout(()=>{tempoDownButton.className = "tempo-down-button"}, 300)
       decrementTempo()
+
+      // case "shuffle-up":
+      // shuffleUpButton.className = "shuffle-up-button-lit"
+      // setTimeout(()=>{shuffleUpButton.className = "shuffle-up-button"}, 300)
+      // incrementShuffle()
+      // break;
+      //
+      // case "shuffle-down":
+      // shuffleDownButton.className = "shuffle-down-button-lit"
+      // setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
+      // decrementShuffle()
+      // break;
+
     }
 
   })
 
 })
+
+
+let currentShuffle = 0
+
+function incrementShuffle(){
+  currentShuffle += 1
+  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
+}
+
+function decrementShuffle(){
+  currentShuffle -= 1
+  $("#shuffle-screen").sevenSeg({ value: currentShuffle});
+}
 
 
 
