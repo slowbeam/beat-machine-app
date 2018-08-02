@@ -55,5 +55,8 @@ const DrumKit = (function() {
       }
       return sampleObjects
     }
+    static all(){
+      return drumKits
+    }
   }
 })()

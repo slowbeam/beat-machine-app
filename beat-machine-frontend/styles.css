@@ -438,7 +438,7 @@ input[type=submit] {
 
 input[type=submit]:hover {
   transition: .1s;
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 input[type="text"]{

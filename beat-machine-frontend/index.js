@@ -59,6 +59,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
   //   return drumKit
   // }
 
+  function populateDrumKitMenu() {
+    let drumKitNames = Object.keys(DrumKit.all())
+    drumKitNames = drumKitNames.map( name => {
+      return `<option value="${name}">${name}</option>`
+    }).join('')
+    document.querySelector('#drumkit-menu-options').innerHTML = drumKitNames
+  }
+
+  populateDrumKitMenu()
+
   function loadDrumKit(name) {
     loadedDrumKit = new DrumKit(name)
   }
@@ -226,6 +236,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementShuffle()
     }
 
+    if (event.target.id === 'load-drumkit'){
+      event.preventDefault()
+      let drumKit = document.querySelector('#drumkit-menu').value
+      loadDrumKit(drumKit)
+    }
+
   })
 
   document.body.addEventListener('keyup', function(event) {
@@ -237,6 +253,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   })
 
   document.body.addEventListener('keydown', function(event){
+    if (event.code === 'Space'){event.preventDefault()}
     if (event.code === 'ArrowUp'){
       event.preventDefault()
       tempoUpButton.className = "tempo-up-button-lit"

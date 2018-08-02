@@ -31,13 +31,12 @@
 
         <div class="drumkit-load-container">
 
-          <form class="drumkit-select-form" action="index.html" method="post">
-          <select class="drumkit-selector">
-            <optgroup label="drumkit-options">
-              <option value="TEST">trap kit</option>
+          <form class="drumkit-select-form" action="index.html">
+          <select class="drumkit-selector" id="drumkit-menu">
+            <optgroup label="drumkit-options" id="drumkit-menu-options">
             </optgroup>
           </select>
-          <input type="submit" name="" value="load">
+          <input type="submit" name="" value="load" id="load-drumkit">
           </form>
 
         </div>
@@ -378,7 +377,7 @@
             <div class="new-beat-form-container">
 
               <form class="new-form" action="index.html" method="post">
-                <input type="text" name="" value="enter a name"><br><br>
+                <input type="text" name="" placeholder="enter a name"><br><br>
                 <input type="submit" name="" value="save">
 
               </form>
