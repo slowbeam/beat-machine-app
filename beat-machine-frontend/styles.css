@@ -2,7 +2,13 @@
 
 body {
   background-color: lightGrey;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: "antipasto";
+}
+
+@font-face {
+    font-family: "antipasto";
+    src: url("fonts/antipastopro-demibold-webfont.woff");
+
 }
 
 p {
@@ -90,6 +96,7 @@ h4 {
   margin 0px auto;
   width: 1100px;
   padding-top: 0%;
+
 }
 
 #buttons {
@@ -193,7 +200,7 @@ h4 {
 
 
 .control-panel-container {
-  margin-top: 513px;
+  margin-top: 527px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -389,3 +396,79 @@ h4 {
        border-radius: 10px;
        margin-left: 12px;
    }
+
+.save-container {
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.save-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 1200px;
+  background: url('svg/buttons/beat-machine-save-area-2.svg');
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-container {
+  margin-top: 60px;
+  width: 980px;
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type=submit] {
+    width: 120px;
+    height: 50px;
+    font-family: "antipasto";
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: #f4b876;
+    box-shadow: 3px 3px 12px #888888;
+    color: white;
+    transition: .1s;
+    transform: scale(1);
+
+}
+
+input[type=submit]:hover {
+  transition: .1s;
+  transform: scale(1.03);
+}
+
+input[type="text"]{
+    font-family: "antipasto";
+    font-size:28px;
+    width: 200px;
+    height: 35px;
+    color: #7676a2;
+    background-color: #efeff4;
+}
+
+.new-beat-form-container {
+  text-align: center;
+}
+
+.beat-selector-container {
+  text-align: center;
+}
+
+select {
+  font-family: "antipasto";
+  font-size: 28px;
+  height: 40px;
+  background-color:  #efeff4;
+  color: #7676a2;
+}
+
+.drumkit-load-container {
+  display: flex;
+  margin-left: 280px;
+  margin-top: -100px;
+  margin-bottom: 50px;
+}
