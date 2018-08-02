@@ -60,7 +60,7 @@ h4 {
 }
 
 .button-wrapper {
-  min-height: 75px
+  min-height: 75px /*missing semicolon */
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5px;

@@ -93,6 +93,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
   }
 
+  function parseShuffle(shuffle) {
+    return shuffle / 100
+  }
+
   function incrementTempo(){
     currentTempo += 1
     $("#tempo-screen").sevenSeg({ value: currentTempo});
@@ -112,8 +116,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
       })
       if (stepCount === 16){
         stepCount = 1
+        // advanceLights()
       } else {
         stepCount++
+        // advanceLights()
       }
       playback = setTimeout(playBeats, (parseTempo(currentTempo) * shuffleOffset()));
     }, (parseTempo(currentTempo)));
@@ -124,77 +130,85 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // stepCount = 1 // resets sequence to beginning
   }
 
+  // function advanceLights() {
+  //   let previousLight = document.querySelector(`#sequence-light-${stepCount - 1}`)
+  //   previousLight.innerHTML.split('-').pop()
+  //   previousLight.innerHTML = previousLight.innerHTML.join('-')
+  //   let currentLight = document.querySelector(`#sequence-light-${stepCount}`)
+  //   currentLight.innerHTML += '-lit'
+  // }
+
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false});
 
   const rootDiv = document.getElementById('main-container')
 
-  const snareOne = document.getElementById('snare-one')
-  const snareTwo = document.getElementById('snare-two')
-  const snareThree = document.getElementById('snare-three')
-  const snareFour = document.getElementById('snare-four')
-  const snareFive = document.getElementById('snare-five')
-  const snareSix = document.getElementById('snare-six')
-  const snareSeven = document.getElementById('snare-seven')
-  const snareEight = document.getElementById('snare-eight')
-  const snareNine = document.getElementById('snare-nine')
-  const snareTen = document.getElementById('snare-ten')
-  const snareEleven = document.getElementById('snare-eleven')
-  const snareTwelve = document.getElementById('snare-twelve')
-  const snareThirteen = document.getElementById('snare-thirteen')
-  const snareFourteen = document.getElementById('snare-fourteen')
-  const snareFifteen = document.getElementById('snare-fifteen')
-  const snareSixteen = document.getElementById('snare-sixteen')
-
-  const kickOne = document.getElementById('kick-one')
-  const kickTwo = document.getElementById('kick-two')
-  const kickThree = document.getElementById('kick-three')
-  const kickFour = document.getElementById('kick-four')
-  const kickFive = document.getElementById('kick-five')
-  const kickSix = document.getElementById('kick-six')
-  const kickSeven = document.getElementById('kick-seven')
-  const kickEight = document.getElementById('kick-eight')
-  const kickNine = document.getElementById('kick-nine')
-  const kickTen = document.getElementById('kick-ten')
-  const kickEleven = document.getElementById('kick-eleven')
-  const kickTwelve = document.getElementById('kick-twelve')
-  const kickThirteen = document.getElementById('kick-thirteen')
-  const kickFourteen = document.getElementById('kick-fourteen')
-  const kickFifteen = document.getElementById('kick-fifteen')
-  const kickSixteen = document.getElementById('kick-sixteen')
-
-  const oHatOne = document.getElementById('o-hat-one')
-  const oHatTwo = document.getElementById('o-hat-two')
-  const oHatThree = document.getElementById('o-hat-three')
-  const oHatFour = document.getElementById('o-hat-four')
-  const oHatFive = document.getElementById('o-hat-five')
-  const oHatSix = document.getElementById('o-hat-six')
-  const oHatSeven = document.getElementById('o-hat-seven')
-  const oHatEight = document.getElementById('o-hat-eight')
-  const oHatNine = document.getElementById('o-hat-nine')
-  const oHatTen = document.getElementById('o-hat-ten')
-  const oHatEleven = document.getElementById('o-hat-eleven')
-  const oHatTwelve = document.getElementById('o-hat-twelve')
-  const oHatThirteen = document.getElementById('o-hat-thirteen')
-  const oHatFourteen = document.getElementById('o-hat-fourteen')
-  const oHatFifteen = document.getElementById('o-hat-fifteen')
-  const oHatSixteen = document.getElementById('o-hat-sixteen')
-
-  const cHatOne = document.getElementById('c-hat-one')
-  const cHatTwo = document.getElementById('c-hat-two')
-  const cHatThree = document.getElementById('c-hat-three')
-  const cHatFour = document.getElementById('c-hat-four')
-  const cHatFive = document.getElementById('c-hat-five')
-  const cHatSix = document.getElementById('c-hat-six')
-  const cHatSeven = document.getElementById('c-hat-seven')
-  const cHatEight = document.getElementById('c-hat-eight')
-  const cHatNine = document.getElementById('c-hat-nine')
-  const cHatTen = document.getElementById('c-hat-ten')
-  const cHatEleven = document.getElementById('c-hat-eleven')
-  const cHatTwelve = document.getElementById('c-hat-twelve')
-  const cHatThirteen = document.getElementById('c-hat-thirteen')
-  const cHatFourteen = document.getElementById('c-hat-fourteen')
-  const cHatFifteen = document.getElementById('c-hat-fifteen')
-  const cHatSixteen = document.getElementById('c-hat-sixteen')
+  // const snareOne = document.getElementById('snare-one')
+  // const snareTwo = document.getElementById('snare-two')
+  // const snareThree = document.getElementById('snare-three')
+  // const snareFour = document.getElementById('snare-four')
+  // const snareFive = document.getElementById('snare-five')
+  // const snareSix = document.getElementById('snare-six')
+  // const snareSeven = document.getElementById('snare-seven')
+  // const snareEight = document.getElementById('snare-eight')
+  // const snareNine = document.getElementById('snare-nine')
+  // const snareTen = document.getElementById('snare-ten')
+  // const snareEleven = document.getElementById('snare-eleven')
+  // const snareTwelve = document.getElementById('snare-twelve')
+  // const snareThirteen = document.getElementById('snare-thirteen')
+  // const snareFourteen = document.getElementById('snare-fourteen')
+  // const snareFifteen = document.getElementById('snare-fifteen')
+  // const snareSixteen = document.getElementById('snare-sixteen')
+  //
+  // const kickOne = document.getElementById('kick-one')
+  // const kickTwo = document.getElementById('kick-two')
+  // const kickThree = document.getElementById('kick-three')
+  // const kickFour = document.getElementById('kick-four')
+  // const kickFive = document.getElementById('kick-five')
+  // const kickSix = document.getElementById('kick-six')
+  // const kickSeven = document.getElementById('kick-seven')
+  // const kickEight = document.getElementById('kick-eight')
+  // const kickNine = document.getElementById('kick-nine')
+  // const kickTen = document.getElementById('kick-ten')
+  // const kickEleven = document.getElementById('kick-eleven')
+  // const kickTwelve = document.getElementById('kick-twelve')
+  // const kickThirteen = document.getElementById('kick-thirteen')
+  // const kickFourteen = document.getElementById('kick-fourteen')
+  // const kickFifteen = document.getElementById('kick-fifteen')
+  // const kickSixteen = document.getElementById('kick-sixteen')
+  //
+  // const oHatOne = document.getElementById('o-hat-one')
+  // const oHatTwo = document.getElementById('o-hat-two')
+  // const oHatThree = document.getElementById('o-hat-three')
+  // const oHatFour = document.getElementById('o-hat-four')
+  // const oHatFive = document.getElementById('o-hat-five')
+  // const oHatSix = document.getElementById('o-hat-six')
+  // const oHatSeven = document.getElementById('o-hat-seven')
+  // const oHatEight = document.getElementById('o-hat-eight')
+  // const oHatNine = document.getElementById('o-hat-nine')
+  // const oHatTen = document.getElementById('o-hat-ten')
+  // const oHatEleven = document.getElementById('o-hat-eleven')
+  // const oHatTwelve = document.getElementById('o-hat-twelve')
+  // const oHatThirteen = document.getElementById('o-hat-thirteen')
+  // const oHatFourteen = document.getElementById('o-hat-fourteen')
+  // const oHatFifteen = document.getElementById('o-hat-fifteen')
+  // const oHatSixteen = document.getElementById('o-hat-sixteen')
+  //
+  // const cHatOne = document.getElementById('c-hat-one')
+  // const cHatTwo = document.getElementById('c-hat-two')
+  // const cHatThree = document.getElementById('c-hat-three')
+  // const cHatFour = document.getElementById('c-hat-four')
+  // const cHatFive = document.getElementById('c-hat-five')
+  // const cHatSix = document.getElementById('c-hat-six')
+  // const cHatSeven = document.getElementById('c-hat-seven')
+  // const cHatEight = document.getElementById('c-hat-eight')
+  // const cHatNine = document.getElementById('c-hat-nine')
+  // const cHatTen = document.getElementById('c-hat-ten')
+  // const cHatEleven = document.getElementById('c-hat-eleven')
+  // const cHatTwelve = document.getElementById('c-hat-twelve')
+  // const cHatThirteen = document.getElementById('c-hat-thirteen')
+  // const cHatFourteen = document.getElementById('c-hat-fourteen')
+  // const cHatFifteen = document.getElementById('c-hat-fifteen')
+  // const cHatSixteen = document.getElementById('c-hat-sixteen')
 
   const playButton = document.getElementById('play-button')
   const stopButton = document.getElementById('stop-button')
