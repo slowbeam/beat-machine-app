@@ -450,6 +450,11 @@ input[type=submit] {
       transform: scale(1);
 }
 
+#clear-button:hover {
+  transition: .1s;
+  transform: scale(1.02);
+}
+
 input[type=submit]:hover {
   transition: .1s;
   transform: scale(1.02);
