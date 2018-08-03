@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         node.className = unlit;
       }
     })
+    steps = [];
   }
 
 // RESTful API
