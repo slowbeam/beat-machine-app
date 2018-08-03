@@ -441,5 +441,26 @@ getBeats()
 // addNoteToSequence('hiHatClosed', 1)
 // addNoteToSequence('hiHatOpen', 2)
 // addNoteToSequence('clap', 4)
+const pressed = [];
+const secretCode = 'uuddlrlrba';
+window.addEventListener('keyup', (e) => {
+  let key;
+  if(e.key == "ArrowUp") {
+    key = 'u'
+  } else if(e.key == "ArrowDown") {
+    key = 'd'
+  } else if(e.key == "ArrowLeft") {
+    key = 'l'
+  } else if(e.key == "ArrowRight") {
+    key = 'r'
+  }
+  pressed.push(key || e.key);
+
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  if (pressed.join('').includes(secretCode)) {
+    console.log('DING DING!');
+  }
+  console.log(pressed);
+});
 
 })
