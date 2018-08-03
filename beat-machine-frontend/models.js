@@ -54,7 +54,14 @@ const DrumKit = (function() {
       snare:'audio/airhorns/airhorn2.wav',
       ohat:'audio/airhorns/airhorn3.wav',
       chat:'audio/airhorns/airhorn4.wav'
+    },
+    grapelady: {
+      kick: 'audio/GrapeLady/grape1.mp3',
+      snare: 'audio/GrapeLady/grape2.mp3',
+      ohat: 'audio/GrapeLady/grape3.mp3',
+      chat: 'audio/GrapeLady/grape4.mp3'
     }
+
   }
   return class DrumKit {
     constructor(name) {
