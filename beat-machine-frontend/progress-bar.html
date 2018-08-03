@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="progress-bar.css">
+  <link rel="stylesheet" href="src/progress-bar.css">
 </head>
 <body>
 
@@ -9,13 +9,17 @@
     <div class="progress" id="progress">
       <audio id="audio" src="https://www.freesound.org/data/previews/338/338825_1648170-lq.mp3"></audio>
     </div>
-
   </div>
   <button data-action="toggle" class="togglePlay">Play/Pause</button>
 
-  <script src="progress-bar.js" type="text/javascript">
+  <button type="button" data-sound="hihat-closed">Hihat Closed</button>
+  <button type="button" data-sound="hihat-open">Hihat Open</button>
+  <button type="button" data-sound="kick">Kick</button>
+  <button type="button" data-sound="snare">snare</button>
 
-  </script>
+  <script src="src/web-audio.js" type="text/javascript"></script>
+  <script src="src/progress-bar.js" type="text/javascript"></script>
+  <script src="src/BufferLoader.js" type="text/javascript"></script>
 </body>
 
 </html>

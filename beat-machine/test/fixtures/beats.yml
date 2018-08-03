@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  steps: MyString
+  tempo: 1
+  shuffle: 1
+
+two:
+  steps: MyString
+  tempo: 1
+  shuffle: 1

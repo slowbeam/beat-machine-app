@@ -130,6 +130,91 @@ document.addEventListener("DOMContentLoaded", ()=>{
     currentLight.className += '-lit'
   }
 
+  function loadBeat(obj) {
+    steps = JSON.parse(obj.steps)
+    currentTempo = obj.tempo
+    currentShuffle = obj.shuffle
+    $("#shuffle-screen").sevenSeg({ value: parseShuffle(currentShuffle) || '0'});
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
+
+  function loadButtons(stepObj) {
+    clearBtns()
+    let stepArr = JSON.parse(stepObj.steps);
+    stepArr.forEach(obj => {
+      if(obj.notes) {
+        obj.notes.forEach(inst => {
+          let litBtn = `${inst.instrument}-${obj.number}`;
+          let btn = rootDiv.querySelector(`#${litBtn}`);
+          btn.className += '-lit'
+        })
+      }
+    })
+  }
+
+  function clearBtns() {
+    let btns = rootDiv.querySelectorAll('.sequencer-button')
+    Array.from(btns).map(node => {
+      if(node.className.includes('-lit') && node.className.includes('sequencer-button')){
+        let unlit = node.className.replace(/-lit/g,'');
+        node.className = unlit;
+      }
+    })
+    steps = []
+    instantiateSteps()
+  }
+
+// RESTful API
+const apiUrl = 'http://localhost:3000/api/v1/beats'
+
+function getBeats() {
+  fetch(apiUrl).then(res=>res.json()).then(resp=> {showedSavedList(resp)})
+}
+
+function showedSavedList(arr){
+  let htmlBeatOptions = arr.map(obj => {
+      return `<option value="${obj.id}">${obj.name}</option>`
+  }).join('')
+
+  document.getElementById('beat-options').innerHTML = htmlBeatOptions
+};
+
+function getBeat(node) {
+  let id = node.parentNode.querySelector('.beat-selector').value
+  fetch(`${apiUrl}/${id}`)
+    .then(res=>res.json())
+    .then(data=>{
+      loadButtons(data)
+      loadBeat(data)
+    })
+}
+
+function postBeat(steps, tempo, shuffle) {
+  let stringSteps = JSON.stringify(steps);
+  let name = document.getElementById('beat-name')
+  let config = {
+    method: 'POST',
+    body: JSON.stringify({
+      name: name.value,
+      steps: stringSteps,
+      tempo: tempo,
+      shuffle: shuffle
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  }
+
+  fetch(apiUrl, config).then(res=>res.json()).then(()=>{getBeats(); clearSaveField()})
+}
+
+function clearSaveField(){
+  document.getElementById('beat-name').value = ""
+}
+
+getBeats()
+
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
   $("#shuffle-screen").sevenSeg({ digits: 3, value: parseShuffle(currentShuffle) || '0', decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
@@ -196,6 +281,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementShuffle()
     }
 
+    if (event.target.dataset.action === "save-beat"){
+      event.preventDefault()
+      postBeat(steps, currentTempo, currentShuffle)
+    }
+    if (event.target.dataset.action === 'load-beat'){
+      event.preventDefault()
+      getBeat(event.target)
+    }
+    if (event.target.dataset.action === 'clear'){
+      event.preventDefault()
+      clearBtns()
+    }
     if (event.target.id === 'load-drumkit'){
       event.preventDefault()
       let drumKit = document.querySelector('#drumkit-menu').value

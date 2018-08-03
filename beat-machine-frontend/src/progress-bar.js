@@ -1,8 +1,8 @@
-let timer;
-var percent = 0;
 const audio = document.getElementById("audio");
 const container = document.getElementById('container');
 const progress = document.getElementById('progress');
+let timer;
+let percent = 0;
 
 audio.addEventListener("playing", function(event) {
   let duration = event.target.duration;
@@ -25,13 +25,13 @@ container.addEventListener('click', event => {
   audio.currentTime = percent * audio.duration;
 })
 
-var advance = function(duration, element) {
+let advance = function(duration, element) {
   percent = Math.min(element.currentTime / duration * 100, 100);
   progress.style.width = percent+'%'
   startTimer(duration, element);
 }
 
-var startTimer = function(duration, element){
+let startTimer = function(duration, element){
   if(percent < 100) {
     timer = setTimeout(function (){advance(duration, element)}, 100);
   }
