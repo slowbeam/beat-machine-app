@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   instantiateSteps()
 
   let playback;
+  let loadedDrumKit;
+  loadDrumKit('trap')
   let currentTempo = 120
   let stepCount = 1
   let currentShuffle = 0.0
@@ -37,27 +39,39 @@ document.addEventListener("DOMContentLoaded", ()=>{
   //   clap: 'audio/Roland TR-808/Clap.wav'
   // }
 
-  let drumKit = {
-    kick:'audio/Roland TR-909/Bassdrum-03.wav',
-    snare:'audio/Roland TR-909/Clap.wav',
-    ohat:'audio/Roland TR-909/Hat Open.wav',
-    chat:'audio/Roland TR-909/Hat Closed.wav',
+  // let drumKit = {
+  //   kick:'audio/Roland TR-909/Bassdrum-03.wav',
+  //   snare:'audio/Roland TR-909/Clap.wav',
+  //   ohat:'audio/Roland TR-909/Hat Open.wav',
+  //   chat:'audio/Roland TR-909/Hat Closed.wav',
+  // }
+  //
+  // function instantiateDrumKit(drumKit){
+  //   for (let instrument in drumKit){
+  //     let sampleObjects = []
+  //     let count = 1
+  //     while (count <= 16) {
+  //       sampleObjects.push(new Audio(drumKit[instrument]))
+  //       count++
+  //     }
+  //     drumKit[instrument] = sampleObjects
+  //   }
+  //   return drumKit
+  // }
+
+  function populateDrumKitMenu() {
+    let drumKitNames = Object.keys(DrumKit.all())
+    drumKitNames = drumKitNames.map( name => {
+      return `<option value="${name}">${name}</option>`
+    }).join('')
+    document.querySelector('#drumkit-menu-options').innerHTML = drumKitNames
   }
 
-  function instantiateDrumKit(drumKit){
-    for (let instrument in drumKit){
-      let sampleObjects = []
-      let count = 1
-      while (count <= 16) {
-        sampleObjects.push(new Audio(drumKit[instrument]))
-        count++
-      }
-      drumKit[instrument] = sampleObjects
-    }
-    return drumKit
-  }
+  populateDrumKitMenu()
 
-  const loadedDrumKit = instantiateDrumKit(drumKit)
+  function loadDrumKit(name) {
+    loadedDrumKit = new DrumKit(name)
+  }
 
   function addNoteToSequence(instrument, stepNum) {
     new Note(instrument, steps[stepNum - 1])
@@ -123,16 +137,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
   function startPlay() {
     playback = setTimeout(function playBeats() {
       console.log(stepCount);
-
       steps[stepCount - 1].notes.forEach(function(note) {
         loadedDrumKit[note.instrument][stepCount - 1].play()
       })
       if (stepCount === 16){
+        advanceLights()
         stepCount = 1
-        // advanceLights()
       } else {
+        advanceLights()
         stepCount++
-        // advanceLights()
       }
       playback = setTimeout(playBeats, (parseTempo(currentTempo) * shuffleOffset()));
     }, (parseTempo(currentTempo)));
@@ -143,13 +156,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // stepCount = 1 // resets sequence to beginning
   }
 
-  // function advanceLights() {
-  //   let previousLight = document.querySelector(`#sequence-light-${stepCount - 1}`)
-  //   previousLight.innerHTML.split('-').pop()
-  //   previousLight.innerHTML = previousLight.innerHTML.join('-')
-  //   let currentLight = document.querySelector(`#sequence-light-${stepCount}`)
-  //   currentLight.innerHTML += '-lit'
-  // }
+  function advanceLights() {
+    let previousLight;
+    if (stepCount === 1){
+      previousLight = document.querySelector(`#status-light-16`)
+    } else {
+      previousLight = document.querySelector(`#status-light-${stepCount - 1}`)
+    }
+    if (previousLight.className.includes('lit')){
+      previousLight.className = 'status-light'
+    }
+    let currentLight = document.querySelector(`#status-light-${stepCount}`)
+    currentLight.className += '-lit'
+  }
 
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
@@ -217,6 +236,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementShuffle()
     }
 
+    if (event.target.id === 'load-drumkit'){
+      event.preventDefault()
+      let drumKit = document.querySelector('#drumkit-menu').value
+      loadDrumKit(drumKit)
+    }
+
   })
 
   document.body.addEventListener('keyup', function(event) {
@@ -228,6 +253,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   })
 
   document.body.addEventListener('keydown', function(event){
+    if (event.code === 'Space'){event.preventDefault()}
     if (event.code === 'ArrowUp'){
       event.preventDefault()
       tempoUpButton.className = "tempo-up-button-lit"
@@ -253,10 +279,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
       decrementShuffle()
     }
   })
-
-})
-
-
 
 // function startPlay() {
 //   playback = setInterval(playBeats, parseTempo(currentTempo))
@@ -322,3 +344,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 // addNoteToSequence('hiHatClosed', 1)
 // addNoteToSequence('hiHatOpen', 2)
 // addNoteToSequence('clap', 4)
+
+})
