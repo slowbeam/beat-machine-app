@@ -19,55 +19,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let stepCount = 1
   let currentShuffle = 0.0
 
-  // let drumKit = {
-  //   kick: 'audio/LF_kick_08.wav',
-  //   snare: 'audio/LF_snare_01.wav',
-  //   hiHatClosed: 'audio/LF_hihat_closed_05.wav',
-  //   hiHatOpen: 'audio/LF_hihat_open_03.wav'
-  // }
-
-  // let drumKit = {
-  //   kick:'audio/Roland TR-808/Bassdrum-05.wav',
-  //   snare:'audio/Roland TR-808/Snaredrum.wav',
-  //   ohat:'audio/Roland TR-808/Hat Open.wav',
-  //   chat:'audio/Roland TR-808/Hat Closed.wav',
-  //   rimshot:'audio/Roland TR-808/Rimshot.wav',
-  //   tomH:'audio/Roland TR-808/Tom H.wav',
-  //   tomM:'audio/Roland TR-808/Tom M.wav',
-  //   tomL:'audio/Roland TR-808/Tom L.wav',
-  //   cowBell: 'audio/Roland TR-808/Cowbell.wav',
-  //   clap: 'audio/Roland TR-808/Clap.wav'
-  // }
-
-  // let drumKit = {
-  //   kick:'audio/Roland TR-909/Bassdrum-03.wav',
-  //   snare:'audio/Roland TR-909/Clap.wav',
-  //   ohat:'audio/Roland TR-909/Hat Open.wav',
-  //   chat:'audio/Roland TR-909/Hat Closed.wav',
+  // function populateDrumKitMenu() {
+  //   let drumKitNames = Object.keys(DrumKit.all())
+  //   drumKitNames = drumKitNames.map( name => {
+  //     return `<option value="${name}">${name}</option>`
+  //   }).join('')
+  //   document.querySelector('#drumkit-menu-options').innerHTML = drumKitNames
   // }
   //
-  // function instantiateDrumKit(drumKit){
-  //   for (let instrument in drumKit){
-  //     let sampleObjects = []
-  //     let count = 1
-  //     while (count <= 16) {
-  //       sampleObjects.push(new Audio(drumKit[instrument]))
-  //       count++
-  //     }
-  //     drumKit[instrument] = sampleObjects
-  //   }
-  //   return drumKit
-  // }
-
-  function populateDrumKitMenu() {
-    let drumKitNames = Object.keys(DrumKit.all())
-    drumKitNames = drumKitNames.map( name => {
-      return `<option value="${name}">${name}</option>`
-    }).join('')
-    document.querySelector('#drumkit-menu-options').innerHTML = drumKitNames
-  }
-
-  populateDrumKitMenu()
+  // populateDrumKitMenu()
 
   function loadDrumKit(name) {
     loadedDrumKit = new DrumKit(name)
