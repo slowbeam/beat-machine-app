@@ -195,12 +195,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
   function clearBtns() {
     let btns = rootDiv.querySelectorAll('.sequencer-button')
     Array.from(btns).map(node => {
-      if(node.className.includes('-lit')){
+      if(node.className.includes('-lit') && node.className.includes('sequencer-button')){
         let unlit = node.className.replace(/-lit/g,'');
         node.className = unlit;
       }
     })
-    steps = [];
+    steps = []
+    instantiateSteps()
   }
 
 // RESTful API
@@ -223,8 +224,8 @@ function getBeat(node) {
   fetch(`${apiUrl}/${id}`)
     .then(res=>res.json())
     .then(data=>{
-      loadBeat(data)
       loadButtons(data)
+      loadBeat(data)
     })
 }
 
