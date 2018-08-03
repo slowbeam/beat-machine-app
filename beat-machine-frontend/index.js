@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   let playback;
   let loadedDrumKit;
-  loadDrumKit('trap')
+  loadDrumKit('tr808')
   let currentTempo = 120
   let stepCount = 1
   let currentShuffle = 0.0
