@@ -410,5 +410,40 @@ getBeats()
 // addNoteToSequence('hiHatClosed', 1)
 // addNoteToSequence('hiHatOpen', 2)
 // addNoteToSequence('clap', 4)
+const pressed = [];
+const secretCode = 'uuddlrlrba';
+
+const pressed2 = [];
+const secretCode2 = 'grapelady';
+window.addEventListener('keyup', (e) => {
+  let key;
+  if(e.key == "ArrowUp") {
+    key = 'u'
+  } else if(e.key == "ArrowDown") {
+    key = 'd'
+  } else if(e.key == "ArrowLeft") {
+    key = 'l'
+  } else if(e.key == "ArrowRight") {
+    key = 'r'
+  }
+  pressed.push(key || e.key);
+
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  if (pressed.join('').includes(secretCode)) {
+    loadDrumKit('airhorns')
+    cornify_add()
+    console.log('konami activated');
+  }
+
+  pressed2.push(key || e.key);
+
+  pressed2.splice(-secretCode2.length - 1, pressed2.length - secretCode2.length);
+  if (pressed2.join('').includes(secretCode2)) {
+    loadDrumKit('grapelady')
+    cornify_add()
+    console.log('konami activated');
+  }
+
+});
 
 })
