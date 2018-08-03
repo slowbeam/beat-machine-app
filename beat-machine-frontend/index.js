@@ -179,25 +179,28 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   function loadButtons(stepObj) {
-  let btns = rootDiv.querySelectorAll('.sequencer-button')
-  Array.from(btns).map(node => {
-    if(node.className.includes('-lit')){
-      let unlit = node.className.replace(/-lit/g,'');
-      node.className = unlit;
-    }
-  })
+    clearBtns()
+    let stepArr = JSON.parse(stepObj.steps);
+    stepArr.forEach(obj => {
+      if(obj.notes) {
+        obj.notes.forEach(inst => {
+          let litBtn = `${inst.instrument}-${obj.number}`;
+          let btn = rootDiv.querySelector(`#${litBtn}`);
+          btn.className += '-lit'
+        })
+      }
+    })
+  }
 
-  let stepArr = JSON.parse(stepObj.steps);
-  stepArr.forEach(obj => {
-    if(obj.notes) {
-      obj.notes.forEach(inst => {
-        let litBtn = `${inst.instrument}-${obj.number}`;
-        let btn = rootDiv.querySelector(`#${litBtn}`);
-        btn.className += '-lit'
-      })
-    }
-  })
-}
+  function clearBtns() {
+    let btns = rootDiv.querySelectorAll('.sequencer-button')
+    Array.from(btns).map(node => {
+      if(node.className.includes('-lit')){
+        let unlit = node.className.replace(/-lit/g,'');
+        node.className = unlit;
+      }
+    })
+  }
 
 // RESTful API
 const apiUrl = 'http://localhost:3000/api/v1/beats'
@@ -324,7 +327,10 @@ getBeats()
       event.preventDefault()
       getBeat(event.target)
     }
-
+    if (event.target.dataset.action === 'clear'){
+      event.preventDefault()
+      clearBtns()
+    }
     if (event.target.id === 'load-drumkit'){
       event.preventDefault()
       let drumKit = document.querySelector('#drumkit-menu').value
