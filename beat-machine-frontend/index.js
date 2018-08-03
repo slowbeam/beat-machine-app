@@ -230,6 +230,15 @@ getBeats()
   const shuffleUpButton = document.getElementById('shuffle-up-button')
   const shuffleDownButton = document.getElementById('shuffle-down-button')
 
+  let inputFieldFocused = false
+
+  document.querySelector('#beat-name').addEventListener('focus', function(event) {
+    inputFieldFocused = true
+  })
+  document.querySelector('#beat-name').addEventListener('blur', function(event) {
+    inputFieldFocused = false
+  })
+
   rootDiv.addEventListener("click", function(event){
 
     if (event.target.className.includes('sequencer-button')){
@@ -302,7 +311,7 @@ getBeats()
   })
 
   document.body.addEventListener('keyup', function(event) {
-    if (event.code === 'Space'){
+    if (event.code === 'Space' && !inputFieldFocused){
       event.preventDefault()
       if (playButton.className === "play-button"){playButton.className = "play-button-lit"; stopButton.className = "stop-button"; startPlay()}
       else {playButton.className = "play-button"; stopButton.className = "stop-button-lit"; stopPlay()}
@@ -310,7 +319,7 @@ getBeats()
   })
 
   document.body.addEventListener('keydown', function(event){
-    if (event.code === 'Space'){event.preventDefault()}
+    if (event.code === 'Space' && !inputFieldFocused){event.preventDefault()}
     if (event.code === 'ArrowUp'){
       event.preventDefault()
       tempoUpButton.className = "tempo-up-button-lit"
