@@ -20,7 +20,7 @@ const Note = (function() {
 const DrumKit = (function() {
   const drumKits = {
     tr808: {
-      kick:'audio/Roland TR-808/Bassdrum-05.wav',
+      kick:'audio/Roland TR-808/Bassdrum-04.wav',
       snare:'audio/Roland TR-808/Snaredrum.wav',
       ohat:'audio/Roland TR-808/Hat Open.wav',
       chat:'audio/Roland TR-808/Hat Closed.wav'
@@ -31,11 +31,29 @@ const DrumKit = (function() {
       ohat:'audio/Roland TR-909/Hat Open.wav',
       chat:'audio/Roland TR-909/Hat Closed.wav'
     },
-    trap: {
-      kick:'audio/TRAP/Trapaholic Kick (1).WAV',
-      snare:'audio/TRAP/Trapaholic Snare (7).WAV',
-      ohat:'audio/TRAP/Trapaholic Hihat (25).wav',
-      chat:'audio/TRAP/Trap Chant.wav'
+    trap1: {
+      kick:'audio/TRAP1/trap-kick.WAV',
+      snare:'audio/TRAP1/Trapaholic Snare (7).WAV',
+      ohat:'audio/TRAP1/trap-ride.wav',
+      chat:'audio/TRAP1/Trap Chant.wav'
+    },
+    trap2: {
+      kick:'audio/TRAP2/trap-kick.wav',
+      snare:'audio/TRAP2/DT - Snare14.WAV',
+      ohat:'audio/TRAP2/Open Hat.wav',
+      chat:'audio/TRAP2/Hat_Closed_02.wav'
+    },
+    anotherKit: {
+      kick:'audio/another kit/LF_kick_08.wav',
+      snare:'audio/another kit/LF_snare_01.wav',
+      ohat:'audio/another kit/LF_hihat_open_03.wav',
+      chat:'audio/another kit/LF_hihat_closed_05.wav'
+    },
+    airhorns: {
+      kick:'audio/airhorns/airhorn1.wav',
+      snare:'audio/airhorns/airhorn2.wav',
+      ohat:'audio/airhorns/airhorn3.wav',
+      chat:'audio/airhorns/airhorn4.wav'
     }
   }
   return class DrumKit {
