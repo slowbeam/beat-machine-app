@@ -365,11 +365,11 @@
 
               <form class="beat-select-form" action="index.html" method="post">
               <select class="beat-selector">
-                <optgroup label="beat-options">
-                  <option value="TEST">my dope beat</option>
+                <optgroup id="beat-options" label="beat-options">
+
                 </optgroup>
               </select><br><br>
-              <input type="submit" name="" value="load">
+              <input type="submit" data-action="load-beat" value="load">
               </form>
 
             </div>
@@ -377,8 +377,8 @@
             <div class="new-beat-form-container">
 
               <form class="new-form" action="index.html" method="post">
-                <input type="text" name="" placeholder="enter a name"><br><br>
-                <input type="submit" name="" value="save">
+                <input id="beat-name" type="text" name="" placeholder="enter a name"><br><br>
+                <input type="submit" data-action="save-beat" value="save">
 
               </form>
             </div>

@@ -170,6 +170,83 @@ document.addEventListener("DOMContentLoaded", ()=>{
     currentLight.className += '-lit'
   }
 
+  function loadBeat(obj) {
+  steps = JSON.parse(obj.steps)
+  // loadButtons(obj)
+}
+
+function loadButtons(stepObj) {
+  let btns = rootDiv.querySelectorAll('.sequencer-button')
+  Array.from(btns).map(node => {
+    if(node.className.includes('-lit')){
+      let unlit = node.className.replace(/-lit/g,'');
+      node.className = unlit;
+    }
+  })
+
+  let stepArr = JSON.parse(stepObj.steps);
+  stepArr.forEach(obj => {
+    if(obj.notes) {
+      obj.notes.forEach(inst => {
+        let litBtn = `${inst.instrument}-${obj.number}`;
+        let btn = rootDiv.querySelector(`#${litBtn}`);
+        btn.className += '-lit'
+      })
+    }
+  })
+}
+
+// RESTful API
+const apiUrl = 'http://localhost:3000/api/v1/beats'
+
+function getBeats() {
+  fetch(apiUrl).then(res=>res.json()).then(resp=> {showedSavedList(resp)})
+}
+
+function showedSavedList(arr){
+  let htmlBeatOptions = arr.map(obj => {
+      return `<option value="TEST">${obj.name}</option>`
+  }).join('')
+
+  document.getElementById('beat-options').innerHTML = htmlBeatOptions
+};
+
+function getBeat() {
+  let id = 3 //will grab value from dropdown selection
+  fetch(`${apiUrl}/${id}`)
+    .then(res=>res.json())
+    .then(data=>{
+      loadBeat(data)
+      loadButtons(data)
+    })
+}
+
+function postBeat(steps, tempo, shuffle) {
+  let stringSteps = JSON.stringify(steps);
+  let name = document.getElementById('beat-name')
+  let config = {
+    method: 'POST',
+    body: JSON.stringify({
+      name: name.value,
+      steps: stringSteps,
+      tempo: tempo,
+      shuffle: shuffle
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  }
+
+  fetch(apiUrl, config).then(res=>res.json()).then(()=>{getBeats(); clearSaveField()})
+}
+
+function clearSaveField(){
+  document.getElementById('beat-name').value = ""
+}
+
+getBeats()
+
   $("#tempo-screen").sevenSeg({ digits: 3, value: currentTempo, decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
 
   $("#shuffle-screen").sevenSeg({ digits: 3, value: parseShuffle(currentShuffle) || '0', decimalPoint: false, allowInput: false, colorOn: "#f98e6d", colorOff: "#621a04"});
@@ -234,6 +311,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
       shuffleDownButton.className = "shuffle-down-button-lit"
       setTimeout(()=>{shuffleDownButton.className = "shuffle-down-button"}, 300)
       decrementShuffle()
+    }
+
+    if (event.target.dataset.action === "save-beat"){
+      event.preventDefault()
+      postBeat(steps, currentTempo, currentShuffle)
+    }
+    if (event.target.dataset.action === 'load-beat'){
+      getBeat()
     }
 
     if (event.target.id === 'load-drumkit'){
