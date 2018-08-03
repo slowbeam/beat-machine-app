@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_143340) do
     t.string "name"
     t.string "steps"
     t.integer "tempo"
-    t.integer "shuffle"
+    t.float "shuffle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

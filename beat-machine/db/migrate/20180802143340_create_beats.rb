@@ -4,7 +4,7 @@ class CreateBeats < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :steps
       t.integer :tempo
-      t.integer :shuffle
+      t.float :shuffle
 
       t.timestamps
     end
