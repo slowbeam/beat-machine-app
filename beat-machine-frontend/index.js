@@ -171,11 +171,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   function loadBeat(obj) {
-  steps = JSON.parse(obj.steps)
-  // loadButtons(obj)
-}
+    steps = JSON.parse(obj.steps)
+    currentTempo = obj.tempo
+    currentShuffle = obj.shuffle
+    $("#shuffle-screen").sevenSeg({ value: parseShuffle(currentShuffle) || '0'});
+    $("#tempo-screen").sevenSeg({ value: currentTempo});
+  }
 
-function loadButtons(stepObj) {
+  function loadButtons(stepObj) {
   let btns = rootDiv.querySelectorAll('.sequencer-button')
   Array.from(btns).map(node => {
     if(node.className.includes('-lit')){
@@ -205,14 +208,14 @@ function getBeats() {
 
 function showedSavedList(arr){
   let htmlBeatOptions = arr.map(obj => {
-      return `<option value="TEST">${obj.name}</option>`
+      return `<option value="${obj.id}">${obj.name}</option>`
   }).join('')
 
   document.getElementById('beat-options').innerHTML = htmlBeatOptions
 };
 
-function getBeat() {
-  let id = 3 //will grab value from dropdown selection
+function getBeat(node) {
+  let id = node.parentNode.querySelector('.beat-selector').value
   fetch(`${apiUrl}/${id}`)
     .then(res=>res.json())
     .then(data=>{
@@ -318,7 +321,8 @@ getBeats()
       postBeat(steps, currentTempo, currentShuffle)
     }
     if (event.target.dataset.action === 'load-beat'){
-      getBeat()
+      event.preventDefault()
+      getBeat(event.target)
     }
 
     if (event.target.id === 'load-drumkit'){
