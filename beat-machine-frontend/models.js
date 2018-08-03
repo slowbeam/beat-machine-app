@@ -43,6 +43,12 @@ const DrumKit = (function() {
       ohat:'audio/TRAP2/Open Hat.wav',
       chat:'audio/TRAP2/Hat_Closed_02.wav'
     },
+    trap3: {
+      kick: 'audio/TRAP3/trap-3-kick.wav',
+      snare: 'audio/TRAP3/trap-3-snare.wav',
+      ohat: 'audio/TRAP3/trap-3-808.wav',
+      chat: 'audio/TRAP3/trap-3-chat.wav'
+    },
     anotherKit: {
       kick:'audio/another kit/LF_kick_08.wav',
       snare:'audio/another kit/LF_snare_01.wav',
