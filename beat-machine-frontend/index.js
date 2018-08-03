@@ -403,6 +403,9 @@ getBeats()
 // addNoteToSequence('clap', 4)
 const pressed = [];
 const secretCode = 'uuddlrlrba';
+
+const pressed2 = [];
+const secretCode2 = 'grapelady';
 window.addEventListener('keyup', (e) => {
   let key;
   if(e.key == "ArrowUp") {
@@ -418,9 +421,20 @@ window.addEventListener('keyup', (e) => {
 
   pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
   if (pressed.join('').includes(secretCode)) {
-    console.log('DING DING!');
+    loadDrumKit('airhorns')
+    cornify_add()
+    console.log('konami activated');
   }
-  console.log(pressed);
+
+  pressed2.push(key || e.key);
+
+  pressed2.splice(-secretCode2.length - 1, pressed2.length - secretCode2.length);
+  if (pressed2.join('').includes(secretCode2)) {
+    loadDrumKit('grapelady')
+    cornify_add()
+    console.log('konami activated');
+  }
+
 });
 
 })
