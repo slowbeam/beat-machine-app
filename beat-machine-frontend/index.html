@@ -363,40 +363,42 @@
           </div>
         </div>
 
-      </div>
+        <div class="save-container">
+          <div class="save-area">
 
-      <div class="save-container">
-        <div class="save-area">
+            <div class="form-container">
 
-          <div class="form-container">
+              <div class="beat-selector-container">
 
-            <div class="beat-selector-container">
+                <form class="beat-select-form" action="index.html" method="post">
+                <select class="beat-selector">
+                  <optgroup id="beat-options" label="beat-options">
 
-              <form class="beat-select-form" action="index.html" method="post">
-              <select class="beat-selector">
-                <optgroup id="beat-options" label="beat-options">
+                  </optgroup>
+                </select><br><br>
+                <input type="submit" data-action="load-beat" value="load">
+                </form>
 
-                </optgroup>
-              </select><br><br>
-              <input type="submit" data-action="load-beat" value="load">
-              </form>
+              </div>
 
+              <div class="new-beat-form-container">
+
+                <form class="new-form" action="index.html" method="post">
+                  <input id="beat-name" type="text" name="" placeholder="enter a name"><br><br>
+                  <input type="submit" data-action="save-beat" value="save">
+
+                </form>
+              </div>
             </div>
 
-            <div class="new-beat-form-container">
 
-              <form class="new-form" action="index.html" method="post">
-                <input id="beat-name" type="text" name="" placeholder="enter a name"><br><br>
-                <input type="submit" data-action="save-beat" value="save">
-
-              </form>
-            </div>
           </div>
-
 
         </div>
 
       </div>
+
+
     </div>
 
 
