@@ -36,8 +36,6 @@ Beat-Machine can change drum kits, change tempo and add swing rhythm to the beat
 
 ## Development setup
 
-vibelist uses the npm node-sass-chokidar package to compile SCSS into CSS for React. This package is saved to the project but the npm listing can be found here: https://www.npmjs.com/package/node-sass-chokidar
-
 front end: 
 
 ```sh
