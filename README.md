@@ -63,7 +63,9 @@ Sandy Edwards – [@sedwardscode](https://twitter.com/sedwardscode) – sedwards
 
 [https://github.com/slowbeam](https://github.com/slowbeam)
 
-Devin Pierce
+Devin Pierce - devinmpierce@gmail.com
+
+[https://github.com/DevinPierce](https://github.com/DevinPierce)
 
 Shing Wong [@ayoshing](https://twitter.com/ayoshing) - shing2487@gmail.com
 
