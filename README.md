@@ -60,11 +60,13 @@ rails s
 ## Meta
 
 Sandy Edwards – [@sedwardscode](https://twitter.com/sedwardscode) – sedwardscode@gmail.com
+
 [https://github.com/slowbeam](https://github.com/slowbeam)
 
 Devin Pierce
 
-Shing Wong [@ayoshing](https://twitter.com/ayoshing)
+Shing Wong [@ayoshing](https://twitter.com/ayoshing) - shing2487@gmail.com
+
 [https://github.com/ayoshing](https://github.com/ayoshing)
 
 ## Contributing
