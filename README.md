@@ -5,7 +5,7 @@ Inspired by the Roland TR-808, Beat-Machine is a fun hands on rhythm making tool
 
 ##
 
-![beat-machine demo 1](https://media.giphy.com/media/8PvFL14wTsgaLkmAQc/giphy.gif)
+![beat-machine demo 1](https://github.com/slowbeam/beat-machine-app/blob/master/beat-machine-frontend/demos/beat-machine-demo-1.gif)
 
 ## Installation
 
@@ -27,11 +27,11 @@ bundle install
 
 Beat-Machine can save a beat and reload it later on:
 
-![beat-machine demo 2](https://media.giphy.com/media/paI3lxNSbWfoh4WROs/giphy.gif)
+![beat-machine demo 2](https://github.com/slowbeam/beat-machine-app/blob/master/beat-machine-frontend/demos/beat-machine-demo-2.gif)
 
 Beat-Machine can change drum kits, change tempo and add swing rhythm to the beat:
 
-![vibelist demo 3](https://media.giphy.com/media/YVeIckyPMPLJ0IyCnq/giphy.gif)
+![vibelist demo 3](https://github.com/slowbeam/beat-machine-app/blob/master/beat-machine-frontend/demos/beat-machine-demo-3.gif)
 
 
 ## Development setup
